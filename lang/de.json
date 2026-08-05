@@ -1,0 +1,2448 @@
+{
+  "ABILITIES": {
+    "GROUPS": {
+      "Power": "Kraft",
+      "Resilience": "Widerstand",
+      "Speed": "Geschwindigkeit"
+    },
+    "Dexterity": "Geschicklichkeit",
+    "DexterityAbbr": "GE",
+    "Intellect": "Intelligenz",
+    "IntellectAbbr": "IN",
+    "Presence": "Präsenz",
+    "PresenceAbbr": "PR",
+    "Strength": "Stärke",
+    "StrengthAbbr": "ST",
+    "Toughness": "Zähigkeit",
+    "ToughnessAbbr": "ZÄ",
+    "Wisdom": "Weisheit",
+    "WisdomAbbr": "WE"
+  },
+  "ACCESSORY": {
+    "CATEGORIES": {
+      "Clothing": "Kleidung",
+      "Jewelry": "Schmuck",
+      "Other": "Sonstiges",
+      "Trinket": "Talisman"
+    }
+  },
+  "ACTION": {
+    "ACTIONS": {
+      "AddFavorite": "Zu Favoriten hinzufügen",
+      "Delete": "Aktion löschen: {name}",
+      "DeleteConfirm": "Möchtest du die Aktion <strong>{name}</strong> wirklich aus <strong>{parent}</strong> {type} löschen?",
+      "RemoveFavorite": "Aus Favoriten entfernen"
+    },
+    "DEFAULT_ACTIONS": {
+      "Cast": {
+        "Description": "Du webst arkane Energien, um einen Zauber zu wirken.",
+        "Name": "Zauber wirken"
+      },
+      "Defend": {
+        "Description": "Du konzentrierst dich darauf, Schaden zu vermeiden, und erhöhst deine physische Verteidigung. Du erhältst den Zustand <strong>Geschützt</strong> bis zum Beginn deines nächsten Zuges.",
+        "Name": "Verteidigen"
+      },
+      "Delay": {
+        "Description": "Du verzögerst deine Aktion auf einen späteren Zeitpunkt in der Kampfrunde. Wähle eine Initiative zwischen 1 und dem Initiativwert des nächsten Kämpfers nach dir. Du handelst anschließend bei diesem neuen Initiativwert. Du kannst deinen Zug nur einmal pro Runde verzögern.",
+        "Name": "Verzögern"
+      },
+      "Move": {
+        "Description": "Bewege dich eine bestimmte Distanz, indem du eine Anzahl an Aktionen aufwendest, die von deiner Bewegungsrate und der verwendeten Bewegungsaktion abhängt.",
+        "Name": "Bewegen"
+      },
+      "ReactiveStrike": {
+        "Description": "Führe einen Angriff aus, wenn ein Gegner deine Reichweite verlässt und du nicht vollständig im Nahkampf gebunden bist.",
+        "Name": "Reaktionsangriff"
+      },
+      "Recover": {
+        "Description": "Erhole dich 10 Minuten außerhalb des Kampfes und stelle Gesundheit, Moral, Aktionen und Fokus vollständig wieder her.",
+        "Name": "Erholen"
+      },
+      "Reload": {
+        "Description": "Lade eine Fernkampfwaffe mit Nachladezeit nach.",
+        "Name": "Nachladen"
+      },
+      "Rest": {
+        "Description": "Raste zehn Stunden, einschließlich Zeit für Essen, Schlafen, Wundversorgung und Wiederherstellung von Ressourcen.",
+        "Name": "Rasten"
+      },
+      "Strike": {
+        "Description": "Greife ein einzelnes Wesen oder Objekt mit einer deiner ausgerüsteten Waffen an.",
+        "Name": "Angriff"
+      },
+      "ThrowWeapon": {
+        "Description": "Wirf deine ausgerüstete Nahkampfwaffe auf ein nahegelegenes Ziel. Der Angriff erleidet +2 <strong>Banes</strong> und die Waffe wird <strong>fallen gelassen</strong>.",
+        "Name": "Waffe werfen"
+      }
+    },
+    "EFFECT_RESULT_TYPES": {
+      "All": "Alle",
+      "Any": "Beliebig",
+      "CriticalFailure": "Kritischer Fehlschlag",
+      "CriticalSuccess": "Kritischer Erfolg",
+      "Custom": "Benutzerdefiniert",
+      "Failure": "Fehlschlag",
+      "Success": "Erfolg"
+    },
+    "EFFECTS": {
+      "Add": "Effekt hinzufügen",
+      "Delete": "Effekt entfernen"
+    },
+    "FIELDS": {
+      "actionHooks": {
+        "hint": "ACHTUNG! Action Hooks sind eine FORTGESCHRITTENE Funktion zur Automatisierung von Aktionsmechaniken. Eine falsche Konfiguration kann schwerwiegende Folgen haben. Nimm nur Änderungen vor, wenn du dir sicher bist, was du tust.",
+        "label": "Action Hooks"
+      },
+      "condition": {
+        "hint": "Zusätzlicher Referenztext zur Klärung der Voraussetzungen und Auslöserbedingungen, unter denen eine Aktion verwendet werden kann.",
+        "label": "Auslösebedingung"
+      },
+      "cost": {
+        "action": {
+          "hint": "Die Grundkosten dieser Aktion in Aktionspunkten.",
+          "label": "Aktion"
+        },
+        "focus": {
+          "hint": "Die Grundkosten dieser Aktion in Fokuspunkten.",
+          "label": "Fokus"
+        },
+        "hands": {
+          "hint": "Die Anzahl an Händen, die für diese Aktion benötigt werden.",
+          "label": "Benötigte Hände"
+        },
+        "heroism": {
+          "hint": "Die Grundkosten dieser Aktion in Heldentumspunkten.",
+          "label": "Heldentum"
+        },
+        "hint": "Lege die Kosten dieser Aktion in Aktionspunkten, Fokuspunkten oder Heldentum fest.",
+        "label": "Aktionskosten",
+        "weapon": {
+          "hint": "Werden die Aktionspunkt-Kosten der ausgerüsteten Waffe zu den Kosten dieser Aktion hinzugefügt?",
+          "label": "Waffenkosten hinzufügen"
+        }
+      },
+      "description": {
+        "hint": "Eine textliche Beschreibung der Funktionsweise dieser Aktion.",
+        "label": "Aktionsbeschreibung"
+      },
+      "effects": {
+        "element": {
+          "duration": {
+            "label": "Dauer"
+          },
+          "name": {
+            "label": "Effektname"
+          },
+          "result": {
+            "all": {
+              "label": "Alle"
+            },
+            "label": "Ergebnis",
+            "type": {
+              "label": "Typ"
+            }
+          },
+          "scope": {
+            "label": "Effektbereich"
+          },
+          "statuses": {
+            "label": "Status"
+          }
+        }
+      },
+      "id": {
+        "hint": "Gib eine standardisierte CamelCase-Kennung für diese Aktion an. Diese Kennung sollte im gesamten System eindeutig sein.",
+        "label": "Kennung"
+      },
+      "range": {
+        "hint": "Lege eine minimale oder maximale Reichweite in Fuß fest, in der diese Aktion ausgeführt werden kann.",
+        "label": "Aktionsreichweite",
+        "maximum": {
+          "label": "Maximum"
+        },
+        "minimum": {
+          "label": "Minimum"
+        },
+        "weapon": {
+          "hint": "Die Reichweite dieser Aktion wird durch die effektive Reichweite der verwendeten Waffe bestimmt.",
+          "label": "Waffenreichweite verwenden"
+        }
+      },
+      "summon": {
+        "actorUuid": {
+          "hint": "Welche Kreatur soll durch diese Aktion beschworen werden?",
+          "label": "Beschworene Kreatur"
+        },
+        "label": "Beschwören",
+        "permanent": {
+          "hint": "Soll diese Beschwörung bestehen bleiben, bis sie getötet wird?",
+          "label": "Dauerhaft"
+        }
+      },
+      "tags": {
+        "hint": "Füge Tags hinzu, die die Anforderungen, das Verhalten und die Modifikatoren dieser Aktion definieren. Die Reihenfolge der Tags ist wichtig, da spätere Tags Vorrang vor früheren haben, wenn sie dieselben Eigenschaften der Aktion verändern.",
+        "label": "Aktions-Tags"
+      },
+      "target": {
+        "label": "Aktionsziel",
+        "limit": {
+          "hint": "Begrenze den Effekt dieser Aktion auf eine maximale Anzahl einzelner Zielcharaktere. Standardmäßig werden alle Ziele betroffen.",
+          "label": "Maximale Ziele"
+        },
+        "multiple": {
+          "hint": "Wende die Effekte dieser Aktion mehrfach pro Ziel an? Standardmäßig wird die Aktion einmal pro Ziel angewendet.",
+          "label": "Mehrfache Anwendungen"
+        },
+        "number": {
+          "hint": "Wie viele Ziele des ausgewählten Zieltyps werden von dieser Aktion betroffen?",
+          "label": "Zielanzahl"
+        },
+        "scope": {
+          "hint": "Welche Zielausrichtung wird von dieser Aktion beeinflusst?",
+          "label": "Betroffener Bereich"
+        },
+        "self": {
+          "hint": "Ziele automatisch dich selbst an, falls dies für den festgelegten Zielbereich und Zieltyp der Aktion passend ist.",
+          "label": "Selbst als Ziel"
+        },
+        "size": {
+          "hint": "Bestimmte Zieltypen werden zusätzlich durch eine Größe in Fuß definiert.",
+          "label": "Zielgröße"
+        },
+        "type": {
+          "hint": "Welche Art von Ziel oder Bereich wird von dieser Aktion beeinflusst?",
+          "label": "Zieltyp"
+        }
+      }
+    },
+    "SHEET": {
+      "Title": "Aktion"
+    },
+    "TABS": {
+      "description": "Beschreibung",
+      "effects": "Effekte",
+      "hooks": "Hooks",
+      "target": "Ziel",
+      "usage": "Verwendung"
+    },
+    "TAG": {
+      "Accurate": "Präzise",
+      "AccurateTooltip": "Diese Aktion ist besonders präzise. Du erhältst 2 zusätzliche Boons, wenn du diese Aktion ausführst.",
+      "AfterStrike": "Nach Angriff",
+      "AfterStrikeTooltip": "Diese Aktion kann nur unmittelbar nach einem einfachen Angriff ausgeführt werden, der kein kritischer Fehlschlag war.",
+      "Auditory": "Hörbar",
+      "AuditoryTooltip": "Diese Aktion kann Ziele nur betreffen, wenn sie hören können.",
+      "Brute": "Wuchtig",
+      "BruteTooltip": "Diese Aktion setzt rohe Gewalt ein und erfordert eine Waffe, die mit Stärke skaliert.",
+      "Composed": "Komponierter Zauber",
+      "ComposedTooltip": "Diese Aktion ist ein komponierter Zauber.",
+      "Consume": "Verbrauchen",
+      "ConsumeTooltip": "Diese Aktion erfordert und verbraucht einen bestimmten Verbrauchsgegenstand.",
+      "CostAction": "{action}A",
+      "CostFocus": "{focus}F",
+      "CostHand": {
+        "zero": "{hands} Hände",
+        "one": "{hands} Hand",
+        "two": "{hands} Hände",
+        "few": "{hands} Hände",
+        "many": "{hands} Hände",
+        "other": "{hands} Hände"
+      },
+      "CostHealth": "{health}HP",
+      "CostHeroism": "{heroism}H",
+      "CostTooltip": "Die Aktionspunkt- oder Fokuspunktkosten für den Einsatz dieser Aktion.",
+      "CostWeapon": "W",
+      "CostWeaponAction": "W{action}A",
+      "Deadly": "Tödlich",
+      "DeadlyTooltip": "Diese Aktion kann enormen Schaden verursachen und erhöht den Schadensmultiplikator für verursachten Schaden um x1.",
+      "Difficult": "Schwierig",
+      "DifficultTooltip": "Diese Aktion ist kompliziert oder herausfordernd. Du erleidest 1 zusätzlichen Bane, wenn du sie versuchst.",
+      "Disarm": "Entwaffnen",
+      "DisarmTooltip": "Bei Erfolg lässt diese Aktion die Waffe des Ziels fallen.",
+      "DualWield": "Beidhändiger Kampf",
+      "DualWieldTooltip": "Diese Aktion erfordert, dass du zwei separate Waffen führst oder vollständig unbewaffnet bist.",
+      "Empowered": "Verstärkt",
+      "EmpoweredTooltip": "Diese Aktion ist mächtig und verursacht zusätzlichen Schaden. Bei Erfolg erhält sie einen Schadensbonus von +6.",
+      "Finesse": "Finesse",
+      "FinesseTooltip": "Diese Aktion erfordert ein gewisses Maß an Finesse. Du musst eine Waffe führen, die mit Geschicklichkeit skaliert.",
+      "Flanking": "Flankierend",
+      "FlankingTooltip": "Diese Aktion kann nur gegen ein flankiertes oder ahnungsloses Ziel ausgeführt werden.",
+      "Generic": "Allgemein",
+      "GenericTooltip": "Aktionen, die einen allgemeinen Angriff ausführen, ohne einen bestimmten Zauber oder eine bestimmte Waffe zu verwenden.",
+      "Harmless": "Harmlos",
+      "HarmlessTooltip": "Diese Aktion verursacht keinen direkt schädlichen Effekt. Ihr Schadensmultiplikator ist null.",
+      "Healing": "Heilung",
+      "HealingTooltip": "Diese Aktion stellt Ressourcen wieder her, indem der Wunden-Schwellenwert eines Verbündeten geprüft wird.",
+      "IconicSpell": "Ikonischer Zauber",
+      "IconicSpellTooltip": "Diese Aktion ist ein ikonischer Zauber, der durch die Meisterung seiner Komponenten erlernt wurde.",
+      "MainHand": "Haupthand",
+      "MainHandTooltip": "Diese Aktion verwendet deine Haupthandwaffe, um einen Angriff auszuführen.",
+      "Maintained": "Aufrechterhalten",
+      "MaintainedTooltip": "Diese Aktion kann aufrechterhalten werden und verursacht zu Beginn deiner Züge ihre Fokuskosten.",
+      "Mechanical": "Mechanisch",
+      "MechanicalTooltip": "Diese Aktion erfordert den Einsatz einer mechanischen Waffe.",
+      "Melee": "Nahkampf",
+      "MeleeTooltip": "Diese Aktion erfordert, dass du eine Nahkampfwaffe führst oder unbewaffnet bist.",
+      "Movement": "Bewegung",
+      "MovementBlink": "Teleportieren",
+      "MovementBlinkTooltip": "Diese Aktion erfordert, dass die Figur als Teil ihrer Bewegung teleportiert.",
+      "MovementBurrow": "Graben",
+      "MovementBurrowTooltip": "Diese Aktion erfordert, dass die Figur als Teil ihrer Bewegung gräbt.",
+      "MovementClimb": "Klettern",
+      "MovementClimbTooltip": "Diese Aktion erfordert, dass die Figur als Teil ihrer Bewegung klettert.",
+      "MovementCrawl": "Kriechen",
+      "MovementCrawlTooltip": "Diese Aktion erfordert, dass die Figur als Teil ihrer Bewegung kriecht.",
+      "MovementFly": "Fliegen",
+      "MovementFlyTooltip": "Diese Aktion erfordert, dass die Figur als Teil ihrer Bewegung fliegt.",
+      "MovementJump": "Springen",
+      "MovementJumpTooltip": "Diese Aktion erfordert, dass die Figur als Teil ihrer Bewegung springt.",
+      "MovementStep": "Schritt",
+      "MovementStepTooltip": "Diese Aktion erfordert, dass die Figur als Teil ihrer Bewegung einen vorsichtigen Schritt macht.",
+      "MovementSwim": "Schwimmen",
+      "MovementSwimTooltip": "Diese Aktion erfordert, dass die Figur als Teil ihrer Bewegung schwimmt.",
+      "MovementTooltip": "Diese Aktion erlaubt dir, dich als Teil ihrer Aktivierung zu bewegen, einschließlich reduzierter Aktionspunktkosten für eine freie Bewegungsaktion pro Runde.",
+      "MovementWalk": "Gehen",
+      "MovementWalkTooltip": "Diese Aktion erfordert, dass die Figur als Teil ihrer Bewegung geht.",
+      "Natural": "Natürlicher Angriff",
+      "NaturalTooltip": "Diese Aktion beinhaltet einen Angriff mit einer natürlichen Waffe.",
+      "NonCombat": "Außerhalb des Kampfes",
+      "NonCombatTooltip": "Aktionen, die nur außerhalb einer Kampfbegegnung ausgeführt werden können.",
+      "OffHand": "Nebenhand",
+      "OffHandTooltip": "Diese Aktion verwendet deine Nebenhandwaffe, um einen Angriff auszuführen.",
+      "OneHand": "Einhändig",
+      "OneHandTooltip": "Diese Aktion erfordert, dass du eine einhändige Waffe führst.",
+      "Projectile": "Projektil",
+      "ProjectileTooltip": "Diese Aktion erfordert den Einsatz einer Projektilwaffe.",
+      "Rallying": "Sammeln",
+      "RallyingTooltip": "Diese Aktion stellt Ressourcen wieder her, indem der Wahnsinns-Schwellenwert eines Verbündeten geprüft wird.",
+      "Ranged": "Fernkampf",
+      "RangedTooltip": "Diese Aktion erfordert, dass du eine Fernkampfwaffe führst.",
+      "Reaction": "Reaktion",
+      "ReactionTooltip": "Diese Aktion kann nur während des Zuges einer anderen Kreatur ausgeführt werden, wenn ihre Aktivierungsbedingung erfüllt ist.",
+      "Reload": "Nachladen",
+      "ReloadTooltip": "Diese Aktion lädt eine Fernkampfwaffe nach, die nachgeladen werden muss.",
+      "Severe": "Schwerwiegend",
+      "SevereTooltip": "Wenn das Ziel dieser Aktion über Wunden- und Wahnsinnsressourcen verfügt, beschädigt diese Aktion diese Ressourcen direkt, unabhängig von Gesundheit oder Moral.",
+      "Shield": "Schild",
+      "ShieldTooltip": "Diese Aktion erfordert, dass du einen Schild führst.",
+      "Skill": "Fertigkeit",
+      "SkillTooltip": "Diese Aktion beinhaltet eine gezielte oder vergleichende Fertigkeitsprobe.",
+      "Spell": "Zauber",
+      "SpellTooltip": "Diese Aktion beinhaltet Zauberkunst.",
+      "Summon": "Beschwören",
+      "SummonTooltip": "Diese Aktion beschwört, ruft oder erschafft auf andere Weise einen Kämpfer, der der Begegnung beitritt.",
+      "TargetTooltip": "Der Zieltyp, die Distanz und die Anzahl, die für diese Aktion gelten.",
+      "Talisman": "Talisman",
+      "TalismanTooltip": "Diese Aktion erfordert, dass du eine Talismanwaffe führst.",
+      "Thrown": "Wurf",
+      "ThrownTooltip": "Diese Aktion beinhaltet einen Angriff mit einer geworfenen Waffe.",
+      "TwoHanded": "Zweihändig",
+      "TwoHandedTooltip": "Diese Aktion erfordert, dass du eine zweihändige Waffe führst.",
+      "Unarmed": "Unbewaffnet",
+      "UnarmedTooltip": "Diese Aktion erfordert, dass du vollständig unbewaffnet bist.",
+      "Unarmored": "Ungepanzert",
+      "UnarmoredTooltip": "Diese Aktion erfordert, dass du ungepanzert bist.",
+      "Vocal": "Stimmlich",
+      "VocalTooltip": "Diese Aktion erfordert, dass ihr Anwender spricht oder anderweitig Laute erzeugt.",
+      "Weakened": "Geschwächt",
+      "WeakenedTooltip": "Diese Aktion ist schwächer als normale Angriffe und hat einen Schadensbonus von -6."
+    },
+    "TAG_CATEGORIES": {
+      "Attack": "Angriff",
+      "Context": "Kontext",
+      "Damage": "Schaden",
+      "Defenses": "Verteidigungen",
+      "Modifiers": "Modifikatoren",
+      "Movement": "Bewegung",
+      "Requirements": "Anforderungen",
+      "Resources": "Ressourcen",
+      "Scaling": "Skalierung",
+      "Skills": "Fertigkeiten",
+      "Special": "Spezial",
+      "Spellcraft": "Zauberkunst"
+    },
+    "TAGS": {
+      "Action": "Aktions-Tags",
+      "Activation": "Aktivierungs-Tags",
+      "Context": "Kontext-Tags",
+      "Target": "Ziel-Tags",
+      "TargetLimit": "Limit {limit}"
+    },
+    "TARGET_SCOPES": {
+      "All": "Alle",
+      "Allies": "Verbündete",
+      "Enemies": "Feinde",
+      "None": "Keine",
+      "Self": "Selbst"
+    },
+    "TARGET_TYPES": {
+      "Aura": "Aura",
+      "Blast": "Explosion",
+      "Cone": "Kegel",
+      "Fan": "Fächer",
+      "Movement": "Bewegung",
+      "None": "Keine",
+      "Pulse": "Impuls",
+      "Ray": "Strahl",
+      "Self": "Selbst",
+      "Single": "Einzelziel",
+      "Summon": "Beschwören",
+      "Wall": "Wand"
+    },
+    "WARNINGS": {
+      "SPECIFIC": {
+        "BODY_BLOCK": {
+          "AlreadyConfirmed": "Der Angriff gegen dich wurde bereits bestätigt und kann nicht mehr geblockt werden.",
+          "InvalidOutcome": "Du kannst Körperblock nur einsetzen, nachdem ein Angriff gegen dich durch Rüstung oder einen Streiftreffer abgewehrt wurde.",
+          "MeleeOnly": "Du kannst Körperblock nur gegen einen eingehenden Nahkampfangriff einsetzen."
+        },
+        "DELAY": {
+          "AlreadyDelayed": "Du kannst deinen Zug in dieser Kampfrunde nicht erneut verzögern.",
+          "WrongTurn": "Du kannst die Aktion Verzögern nur während deines eigenen Zuges im Kampf verwenden."
+        },
+        "INTERPOSE": {
+          "AllyMustBeTarget": "Der ausgewählte Verbündete muss das Ziel des letzten Angriffs sein.",
+          "AttackMissed": "Du kannst Dazwischengehen nur gegen einen Angriff einsetzen, der deinen Verbündeten getroffen oder gestreift hat.",
+          "RequiresStrike": "Dazwischengehen erfordert, dass die letzte Aktion ein Waffenangriff war.",
+          "SingleTarget": "Dazwischengehen kann nur gegen einen Angriff auf ein einzelnes Ziel eingesetzt werden."
+        }
+      },
+      "AuraNoToken": "Du kannst keine Aktion mit Aura-Ziel verwenden, ohne einen Token auf der Szene zu haben!",
+      "BadStatus": "Du kannst {action} nicht ausführen, während du {status} bist.",
+      "CannotAffordCost": "{name} hat nicht genug {resource}, um {action} zu verwenden!",
+      "CannotAffordHands": {
+        "zero": "{name} muss {hands} freie Hände haben, um {action} zu verwenden!",
+        "one": "{name} muss {hands} freie Hand haben, um {action} zu verwenden!",
+        "two": "{name} muss {hands} freie Hände haben, um {action} zu verwenden!",
+        "few": "{name} muss {hands} freie Hände haben, um {action} zu verwenden!",
+        "many": "{name} muss {hands} freie Hände haben, um {action} zu verwenden!",
+        "other": "{name} muss {hands} freie Hände haben, um {action} zu verwenden!"
+      },
+      "CannotAffordMove": "{name} hat nicht genug Aktionen, um diese Distanz zurückzulegen; erforderlich sind {cost}A!",
+      "CannotSpendAction": "{name} kann keine Aktion ausgeben, weil sie handlungsunfähig ist!",
+      "CannotSpendFocus": "{name} kann keinen Fokus ausgeben, weil sie derzeit {status} ist!",
+      "CannotTargetSelf": "Du kannst dich mit dieser Aktion nicht selbst als Ziel wählen!",
+      "CannotThrow": "Du kannst diese Waffe nicht werfen.",
+      "CannotUse": "{name} erfüllt die Voraussetzungen nicht, um {action} zu verwenden: {reason}",
+      "DirectMovementOnly": "Diese Aktion erfordert einen direkten Bewegungspfad ohne Zwischenpunkte.",
+      "IncorrectTargets": "Du kannst höchstens {number} {type}-Ziele für {action} bestimmen!",
+      "InvalidTarget": "Du musst mindestens ein Ziel vom Typ {type} für {action} bestimmen!",
+      "LastCriticallyMissed": "Du kannst {action} nur nach einem einfachen Angriff ausführen, der kein kritischer Fehlschlag war.",
+      "MaximumRange": "Ein ausgewähltes Ziel ist weiter entfernt als die maximale Reichweite von {max} Fuß.",
+      "MinimumRange": "Ein ausgewähltes Ziel ist näher als die minimale Reichweite von {min} Fuß.",
+      "MinimumSize": "Du musst mindestens Größe {size} haben, um {action} zu verwenden.",
+      "MisconfiguredSummon": "Die Aktion {action} hat kein korrekt konfiguriertes Beschwörungsziel.",
+      "MissingSummonEffect": "ActiveEffect-Daten müssen definiert sein, um die nicht permanente Beschwörung zu verfolgen, die durch die Aktion \"{action}\" erzeugt wird.",
+      "MovementTooFar": "Der geplante Bewegungspfad überschreitet die maximale Reichweite dieser Aktion.",
+      "MovementTooShort": "Der geplante Bewegungspfad erfüllt nicht die minimale Reichweite dieser Aktion.",
+      "MustFollowStrike": "Du kannst die Aktion {action} nur nach einer einfachen Angriffsaktion ausführen.",
+      "MustReload": "Deine Waffe muss nachgeladen werden, um diese Aktion zu verwenden.",
+      "MustScaleDex": "Jede Waffe, die bei dieser Aktion verwendet wird, muss mit Geschicklichkeit skalieren.",
+      "MustScaleStrength": "Jede Waffe, die bei dieser Aktion verwendet wird, muss mit Stärke skalieren.",
+      "NoAbility": "{actor} hat keinen {ability}-Wert und kann {action} daher nicht verwenden.",
+      "NoConsumable": "Kein Verbrauchsgegenstand für Aktion \"{action}\" gefunden.",
+      "NoConsumableUses": "Verbrauchsgegenstand \"{item}\" hat keine verbleibenden Anwendungen für Aktion \"{action}\".",
+      "NonCombat": "Du kannst {action} während eines Kampfes nicht verwenden.",
+      "NoReloadRequired": "Deine Waffen müssen nicht nachgeladen werden.",
+      "NotFlanked": "{action} erfordert ein flankiertes Ziel. Ziel \"{target}\" ist nicht flankiert.",
+      "ReactionUnaware": "Du kannst keine Reaktion verwenden, solange du ahnungslos bist!",
+      "RequiresMelee": "Du musst Nahkampfwaffen ausgerüstet haben, um diese Aktion zu verwenden.",
+      "RequiresNatural": "Diese Aktion erfordert den Einsatz einer natürlichen Waffe.",
+      "RequiresOffhand": "Diese Aktion erfordert eine ausgerüstete Nebenhandwaffe.",
+      "RequiresRanged": "Diese Aktion erfordert eine ausgerüstete Fernkampfwaffe.",
+      "RequiresSlashingMelee": "{action} erfordert eine Nahkampfwaffe, die Hiebschaden verursacht.",
+      "RequiresTalisman": "{action} erfordert den Einsatz einer Talismanwaffe.",
+      "RequiresTwoHanded": "Diese Aktion erfordert eine ausgerüstete zweihändige Waffe.",
+      "RequireTemplate": "Du musst eine Messvorlage platzieren, um den Wirkungsbereich von {action} anzugeben.",
+      "Restrained": "Du kannst dich nicht bewegen, solange du festgehalten bist!",
+      "Silenced": "Du kannst diese Aktion nicht verwenden, solange du stumm bist.",
+      "UnimplementedTarget": "Automatisierung für Zieltyp {type} der Aktion {name} wird noch nicht unterstützt. Du musst betroffene Tokens manuell als Ziel wählen.",
+      "WrongMovementToken": "Du musst den Token bewegen, der diese Aktion ausführt."
+    },
+    "Action": "Aktion",
+    "AffectsScope": "Betrifft {scope}",
+    "AllResult": "{existing} (Alle)",
+    "ChooseWeaponLabel": "Waffe",
+    "ChooseWeaponHint": "Du kannst wählen, welche Waffe du für diese Aktion verwendest.",
+    "Condition": "Bedingung",
+    "Confirmed": "Bestätigt",
+    "DelayHint": "Wähle einen Initiativwert zwischen 1 und {maximum}, bei dem du handeln möchtest.",
+    "DelayLabel": "Verzögerte Initiative",
+    "DelayTitle": "Zug verzögern",
+    "DurationRounds": "{value}R",
+    "DurationSeconds": "{value}S",
+    "DurationUntilEnded": "Bis beendet",
+    "EffectSpecific": "Effekt: {effect}",
+    "NoTargets": "Keine Ziele",
+    "Overview": "Aktionsübersicht",
+    "PlanMovement": "Bewegung planen",
+    "PlannedMovement": "Bewegung geplant",
+    "PlannedRegion": "Region platziert",
+    "PlanRegion": "Region platzieren",
+    "RemoveActor": "Figur entfernen",
+    "RequestActorsHint": "Ziehe einzelne Figuren oder Gruppen hierher, um anzufordern, dass sie an diesem Wurf teilnehmen.",
+    "RequestedActors": "Angeforderte Figuren",
+    "RequestRollsSuffix": "{label}: Würfe anfordern",
+    "RequiresMovement": "Du musst einen Bewegungspfad planen, bevor diese Aktion verwendet werden kann.",
+    "RequiresRegion": "Du musst eine Region platzieren, bevor diese Aktion verwendet werden kann.",
+    "SkillCheck": "{skill}-Fertigkeitsprobe",
+    "SkillCheckGeneric": "Fertigkeitsprobe",
+    "StandardCheck": "Standardprobe",
+    "Targets": "Ziele",
+    "TemplateTargets": "Vorlagenziele",
+    "Unconfirmed": "Unbestätigt",
+    "UseAction": "Aktion verwenden"
+  },
+  "ACTIVE_EFFECT": {
+    "ACTIONS": {
+      "Create": "Effekt erstellen",
+      "Delete": "Effekt löschen",
+      "Disable": "Effekt deaktivieren",
+      "Edit": "Effekt bearbeiten",
+      "Enable": "Effekt aktivieren",
+      "New": "Neuer Effekt"
+    },
+    "STATUSES": {
+      "Asleep": "Schlafend",
+      "Bleeding": "Blutend",
+      "Blind": "Geblendet",
+      "Broken": "Beschädigt",
+      "Burning": "Brennend",
+      "Burrowing": "Grabend",
+      "Confused": "Verwirrt",
+      "Corroding": "Korrodierend",
+      "Dead": "Tot",
+      "Deaf": "Taub",
+      "Decaying": "Verfallend",
+      "Diseased": "Krank",
+      "Disoriented": "Desorientiert",
+      "Dominated": "Beherrscht",
+      "Enraged": "Rasend",
+      "Entropy": "Entropie",
+      "Exhausted": "Erschöpft",
+      "Exposed": "Ungeschützt",
+      "Fear": "Verängstigt",
+      "Flanked": "Flankiert",
+      "FlankedDescription": "Du wirst von mehreren Feinden flankiert, die zusätzliche Boons auf ihre Angriffe erhalten!",
+      "Freezing": "Einfrierend",
+      "Guarded": "Geschützt",
+      "Hastened": "Beschleunigt",
+      "Incapacitated": "Handlungsunfähig",
+      "Insane": "Wahnsinnig",
+      "Inspired": "Inspiriert",
+      "Invisible": "Unsichtbar",
+      "Invulnerable": "Unverwundbar",
+      "Irradiated": "Verstrahlt",
+      "Mending": "Heilend",
+      "Mute": "Stumm",
+      "Paralyzed": "Gelähmt",
+      "Poisoned": "Vergiftet",
+      "Prone": "Liegend",
+      "Resolute": "Entschlossen",
+      "Restrained": "Festgehalten",
+      "Shocked": "Geschockt",
+      "Slowed": "Verlangsamt",
+      "Staggered": "Taumelnd",
+      "Stunned": "Betäubt",
+      "Unaware": "Ahnungslos",
+      "Weakened": "Geschwächt"
+    }
+  },
+  "ACTOR": {
+    "ACTIONS": {
+      "AppliedDetailItem": "{name} {type} wurde auf {actor} angewendet.",
+      "ClearedDetailItem": "{type} wurde von {actor} entfernt.",
+      "DecreaseAbility": "Attributswert senken",
+      "DecreaseAbilitySpecific": "{ability} senken",
+      "EditEngagement": "Bindung bearbeiten",
+      "EditMovement": "Bewegung bearbeiten",
+      "EditSize": "Größe bearbeiten",
+      "IncreaseAbility": "Attributswert erhöhen",
+      "IncreaseAbilitySpecific": "{ability} erhöhen",
+      "LevelUp": "Stufenaufstieg!",
+      "ResetTalents": "Alle Talente zurücksetzen",
+      "RollCheck": "Probe würfeln",
+      "TalentTreeClose": "Talentbaum schließen",
+      "TalentTreeOpen": "Talentbaum öffnen",
+      "ToggleTree": "Talentbaum umschalten"
+    },
+    "ADVERSARY": {
+      "ACTIONS": {
+        "DecreaseLevel": "Stufe senken",
+        "IncreaseLevel": "Stufe erhöhen"
+      },
+      "THREAT_RANKS": {
+        "Boss": "Boss",
+        "Elite": "Elite",
+        "Minion": "Handlanger",
+        "Normal": "Normal"
+      }
+    },
+    "CREATION": {
+      "AbandonContent": "Erstellungsfortschritt verwerfen und den Ersteller verlassen?",
+      "AbandonTitle": "Erstellungsprozess abbrechen?",
+      "Complete": "Abschließen",
+      "Completed": "Abgeschlossen",
+      "CompleteHint": "Erstellung abschließen",
+      "Equipment": "Ausrüstung",
+      "EquipmentAvailable": "Verfügbare Gegenstände",
+      "EquipmentCategory": "Kategorie",
+      "EquipmentFilterAll": "Alle",
+      "EquipmentHint": "Durchsuche links die Gegenstände und füge sie deinem Startinventar hinzu.",
+      "EquipmentInsufficient": "Du kannst dir kein weiteres {name} leisten.",
+      "EquipmentRemaining": "Verbleibendes Gold",
+      "EquipmentSearch": "Gegenstände suchen",
+      "EquipmentStarting": "Startausrüstung",
+      "EquipmentType": "Gegenstandstyp",
+      "Exit": "Verlassen",
+      "ExitHint": "Erstellung verlassen",
+      "NameRequired": "Du musst einen Charakternamen angeben, um die Erstellung abzuschließen.",
+      "Restart": "Neu starten",
+      "RestartContent": "Erstellungsfortschritt verwerfen und von vorne beginnen?",
+      "RestartHint": "Erstellung neu starten",
+      "RestartTitle": "Erstellungsfortschritt zurücksetzen?",
+      "SpendAbilities": "Verteile 9 Punkte auf 6 Attributswerte, mit bis zu 3 Punkten pro Attribut."
+    },
+    "FIELDS": {
+      "abilities": {
+        "label": "Attributswerte"
+      },
+      "currency": {
+        "hint": "Die Menge an Währung, die diese Figur besitzt.",
+        "label": "Währungsbetrag"
+      },
+      "details": {
+        "biography": {
+          "age.label": "Alter",
+          "appearance": {
+            "hint": "Beschreibende Informationen zum äußeren Erscheinungsbild dieser Figur, sichtbar für alle mit mindestens eingeschränkter Berechtigung.",
+            "label": "Erscheinungsbild"
+          },
+          "height.label": "Größe",
+          "private": {
+            "hint": "Private Informationen über diese Figur, die nur für Besitzer der Figur sichtbar sind.",
+            "label": "Private Biografie"
+          },
+          "pronouns.label": "Pronomen",
+          "public": {
+            "hint": "Biografische Informationen über diese Figur, sichtbar für alle mit mindestens eingeschränkter Berechtigung.",
+            "label": "Öffentliche Biografie"
+          },
+          "weight.label": "Gewicht"
+        },
+        "languages": {
+          "label": "Bekannte Sprachen"
+        }
+      },
+      "movement": {
+        "engagement": {
+          "base": "Basisbindung",
+          "label": "Bindung",
+          "labelShort": "Bind.",
+          "tooltip": "Anzahl gebundener Feinde<br>(Größe - 2) + Bindungsbonus"
+        },
+        "engagementBonus": {
+          "hint": "Ein additiver Modifikator auf die Basisbindung.",
+          "label": "Bindungsbonus"
+        },
+        "size": {
+          "base": "Basisgröße",
+          "label": "Größe",
+          "tooltip": "Die Anzahl der quadratischen Rasterfelder, die diese Kreatur einnimmt."
+        },
+        "sizeBonus": {
+          "hint": "Ein additiver Modifikator auf die Basisgröße der Kreatur, definiert durch Abstammung oder Taxonomie.",
+          "label": "Größenbonus"
+        },
+        "stride": {
+          "base": "Basis-Bewegungsrate",
+          "label": "Bewegungsrate",
+          "tooltip": "Bewegungsdistanz pro ausgegebenem Aktionspunkt."
+        },
+        "strideBonus": {
+          "hint": "Ein additiver Modifikator auf die Bewegungsrate der Figur, definiert durch Abstammung oder Taxonomie.",
+          "label": "Bewegungsbonus"
+        }
+      },
+      "resistances": {
+        "bonus": {
+          "hint": "Ein additiver Modifikator auf die Basisresistenz der Kreatur, definiert durch Abstammung oder Taxonomie.",
+          "label": "Resistenzbonus"
+        },
+        "immune": {
+          "hint": "Gib an, ob diese Figur gegen diesen Schadenstyp immun ist.",
+          "label": "Immunität"
+        },
+        "label": "Resistenzen"
+      }
+    },
+    "GROUP": {
+      "ACTIONS": {
+        "RemoveMember": "Mitglied entfernen"
+      },
+      "FIELDS": {
+        "advancement": {
+          "label": "Fortschritt",
+          "milestones": {
+            "element": {
+              "number.label": "Auszeichnungsanzahl",
+              "reason.label": "Auszeichnungsgrund",
+              "reason.placeholder": "Ein optionaler Grund für die Auszeichnung."
+            },
+            "hint": "Eine Aufzeichnung der Meilensteine, die diese Gruppe verdient hat.",
+            "label": "Verdiente Meilensteine"
+          }
+        },
+        "details": {
+          "biography": {
+            "private.label": "Private Biografie",
+            "public.label": "Öffentliche Biografie"
+          }
+        },
+        "members": {
+          "actor.label": "Figur-ID",
+          "label": "Gruppenmitglieder",
+          "quantity.label": "Figurenanzahl",
+          "zero": "Mitglieder",
+          "one": "Mitglied",
+          "two": "Mitglieder",
+          "few": "Mitglieder",
+          "many": "Mitglieder",
+          "other": "Mitglieder"
+        },
+        "movement": {
+          "air.label": "Luftbewegung",
+          "label": "Bewegungsgeschwindigkeit",
+          "land.label": "Landbewegung",
+          "pace.label": "Reisetempo",
+          "water.label": "Wasserbewegung"
+        }
+      },
+      "LABELS": {
+        "cyclePace": "Tempo wechseln",
+        "medianLevel": "Mittlere Stufe",
+        "recover": "Erholen",
+        "rest": "Rasten"
+      },
+      "WARNINGS": {
+        "NoAddSelf": "Du kannst deine eigene Gruppe nicht hinzufügen!",
+        "NotWorldActor": "Du kannst nur eine Welt-Figur hinzufügen."
+      }
+    },
+    "LABELS": {
+      "BackgroundKnowledgeTooltip": "Dieses Wissensgebiet wird durch deinen Hintergrund gewährt.",
+      "BackgroundLanguageTooltip": "Diese Sprache wird durch deinen Hintergrund gewährt.",
+      "Capacity": "Traglast",
+      "Currency": "Währung",
+      "CurrentCapacity": "Aktuelle Traglast",
+      "CurrentEquipment": "Aktuelle Ausrüstung",
+      "FavoriteActions": "Favorisierte Aktionen",
+      "Knowledge": "Wissensgebiete",
+      "KnowledgeHint": "Lerne Wissensgebiete durch deinen Hintergrund oder bearbeite deinen Helden, um welche zu erhalten.",
+      "Languages": "Bekannte Sprachen",
+      "LanguagesHint": "Lerne Sprachen durch deinen Hintergrund oder bearbeite deinen Helden, um welche zu erhalten.",
+      "OverCapacity": "Überlastet"
+    },
+    "SECTIONS": {
+      "ACCESSORY": {
+        "empty": "Rüste bis zu {slots} Accessoires aus deinem Rucksack aus, indem du das Schildsymbol umschaltest.",
+        "header": "Accessoires"
+      },
+      "ACTIVE": {
+        "header": "Aktive Fähigkeiten"
+      },
+      "ARMOR": {
+        "empty": "Rüste Rüstung aus deinem Rucksack aus, indem du das Schildsymbol umschaltest.",
+        "header": "Rüstung"
+      },
+      "BACKPACK": {
+        "empty": "Füge Gegenstände hinzu, indem du sie aus den bereitgestellten Crucible-Systemkompendien hineinziehst.",
+        "header": "Rucksack"
+      },
+      "ICONIC": {
+        "empty": "Füge ikonische Zauber hinzu, indem du das bereitgestellte Crucible-Systemkompendium durchsuchst.",
+        "header": "Ikonische Zauber",
+        "none": "Keine freigeschalteten Plätze für ikonische Zauber."
+      },
+      "PASSIVE": {
+        "header": "Passive Talente"
+      },
+      "SIGNATURE": {
+        "header": "Signaturtalente"
+      },
+      "SPELL": {
+        "header": "Zauberkunst-Talente"
+      },
+      "TOOLBELT": {
+        "empty": "Rüste bis zu {slots} Werkzeuge oder Verbrauchsgegenstände aus deinem Rucksack aus, indem du das Schildsymbol umschaltest.",
+        "header": "Werkzeuggürtel"
+      },
+      "TRAINING": {
+        "header": "Trainingstalente"
+      },
+      "WEAPON": {
+        "empty": "Rüste Waffen aus deinem Rucksack aus, indem du das Schildsymbol umschaltest.",
+        "header": "Waffen"
+      }
+    },
+    "SHEET": {
+      "HEADERS": {
+        "ActionsAttack": "Angriffsaktionen",
+        "ActionsConsumable": "Verbrauchsaktionen",
+        "ActionsGeneral": "Allgemeine Aktionen",
+        "ActionsMovement": "Bewegungsaktionen",
+        "ActionsReaction": "Reaktionen",
+        "ActionsSpell": "Zauberkunst-Aktionen",
+        "ActionsSummon": "Beschwörungsaktionen",
+        "EffectsDisabled": "Deaktivierte Effekte",
+        "EffectsPersistent": "Dauerhafte Effekte",
+        "EffectsSuppressed": "Unterdrückte Effekte",
+        "EffectsTemporary": "Temporäre Effekte"
+      },
+      "Abilities": "Attribute",
+      "AbilityPoints": "Attributspunkte",
+      "Defenses": "Verteidigung",
+      "PointsAvailable": "Verfügbar",
+      "PointsSpent": "Ausgegeben",
+      "Resources": "Ressourcen"
+    },
+    "TABS": {
+      "actions": "Aktionen",
+      "attributes": "Attribute",
+      "biography": "Biografie",
+      "effects": "Effekte",
+      "inventory": "Inventar",
+      "skills": "Fertigkeiten",
+      "spells": "Zauber",
+      "talents": "Talente"
+    },
+    "WARNINGS": {
+      "InsufficientCurrency": "Nicht genügend Währung, um {delta} {denom} abzuziehen.",
+      "MacroNoToken": "Du musst einen Token kontrollieren, um dieses Makro zu verwenden.",
+      "NoAction": "Figur \"{actor}\" hat die Aktion \"{action}\" nicht.",
+      "NoAncestry": "Wähle eine Abstammung",
+      "NoBackground": "Wähle einen Hintergrund",
+      "NoDragTalent": "Talente können einer Heldenfigur nur über den Talentbaum hinzugefügt werden.",
+      "OverspentAbility": "Es wurden zu viele Attributspunkte ausgegeben.",
+      "OverspentTalent": "Es wurden zu viele Talente gewählt.",
+      "UnderspentAbility": "Attributspunkte ausgeben",
+      "UnderspentTalent": "Talentpunkte ausgeben"
+    },
+    "Details": "Details",
+    "DisarmedStatus": "Entwaffnet!",
+    "KnowledgeSpecific": "Wissen: {knowledge}",
+    "LanguageSpecific": "Sprache: {language}",
+    "LevelSpecific": "Stufe {level}",
+    "ProgressionRequirements": "Fortschrittsanforderungen",
+    "ResistanceSpecific": "Resistenz: {resistance}",
+    "SizeSpecific": "Größe {size}",
+    "StrideSpecific": "Bewegungsrate {stride}",
+    "VulnerabilitySpecific": "Verwundbarkeit: {vulnerability}"
+  },
+  "AFFIX": {
+    "FIELDS": {
+      "adjective": {
+        "label": "Adjektiv",
+        "hint": "Ein optionales Adjektiv, das beim Zusammensetzen eines Gegenstandsnamens verwendet wird."
+      },
+      "affixType": {
+        "label": "Affix-Typ",
+        "hint": "Affixe müssen entweder vom Typ Präfix oder Suffix sein."
+      },
+      "identifier": {
+        "label": "Kennung",
+        "hint": "Eine eindeutige Zeichenkennung für dieses Affix (max. 16 Zeichen), die zur Deklaration von Hook-Funktionen und zur Bestimmung von Affix-IDs beim Anwenden auf einen Gegenstand verwendet wird."
+      },
+      "itemTypes": {
+        "label": "Gegenstandstypen",
+        "hint": "Auf welche Gegenstandstypen dieses Affix angewendet werden kann. Wenn keine bestimmten Typen ausgewählt sind, sind alle Gegenstandstypen erlaubt."
+      },
+      "tier": {
+        "label": "Rang",
+        "hint": "Der erlaubte Bereich von Machträngen für dieses Affix. Jeder Rang verbraucht einen Punkt Präfix- oder Suffixkapazität.",
+        "min": {
+          "label": "Minimaler Rang"
+        },
+        "max": {
+          "label": "Maximaler Rang"
+        },
+        "value": {
+          "label": "Affix-Rang",
+          "hint": "Der Rang dieses Affixes, das auf den Gegenstand angewendet wurde."
+        }
+      }
+    },
+    "ConfigIdentity": "Affix-Identität",
+    "ConfigTier": "Rang-Konfiguration",
+    "TierRestriction": "Rangbereich",
+    "Prefixes": "Präfixe",
+    "Suffixes": "Suffixe",
+    "TierDisplay": "Rang {value} / {max}",
+    "TypePrefix": "Präfix",
+    "TypeSuffix": "Suffix"
+  },
+  "ADVANCEMENT": {
+    "ExpectedLevel": "Erwartete Stufe",
+    "Level": "Stufe",
+    "MilestoneAward": "Meilensteine vergeben",
+    "MilestoneTooltip": "{progress} von {required} Meilensteinen bis zur nächsten Stufe",
+    "Progress": "Meilensteinfortschritt"
+  },
+  "ANCESTRY": {
+    "FIELDS": {
+      "abilities": {
+        "label": "Attributswerte",
+        "primary": {
+          "hint": "Wähle einen primären Attributswert, der bei 3 beginnt.",
+          "label": "Primäres Attribut"
+        },
+        "secondary": {
+          "hint": "Wähle einen sekundären Attributswert, der bei 2 beginnt.",
+          "label": "Sekundäres Attribut"
+        }
+      },
+      "description": {
+        "label": "Abstammungsbeschreibung"
+      },
+      "identifier": {
+        "hint": "Eine Zeichenkennung, mit der diese Abstammung in Tags, Aktionen oder anderen UI-Elementen eindeutig referenziert wird. Diese Kennung muss alphanumerisch sein und darf keine Leerzeichen oder Sonderzeichen enthalten.",
+        "label": "Kennung"
+      },
+      "movement": {
+        "label": "Bewegung und Statur",
+        "size": {
+          "hint": "Die Größe dieser Abstammung in Rasterfeldern.",
+          "label": "Größe"
+        },
+        "stride": {
+          "hint": "Die anfängliche Bewegungsrate dieser Abstammung in Rasterfeldern.",
+          "label": "Bewegungsrate"
+        }
+      },
+      "resistances": {
+        "hint": "Du musst sowohl eine Resistenz als auch eine Verwundbarkeit wählen, wenn du eines von beiden auswählst.",
+        "label": "Schadensresistenzen",
+        "resistance": {
+          "hint": "Eine biologische Resistenz (+3) gegen einen bestimmten Schadenstyp.",
+          "label": "Schadensresistenz"
+        },
+        "vulnerability": {
+          "hint": "Eine biologische Verwundbarkeit (-3) gegen einen bestimmten Schadenstyp.",
+          "label": "Schadensverwundbarkeit"
+        }
+      },
+      "talents": {
+        "hint": "Konfiguriere ein oder mehrere Talente, die diese Abstammung automatisch erhält.",
+        "label": "Talentfortschritt"
+      },
+      "ui": {
+        "color": {
+          "hint": "Eine repräsentative Farbe für diese Abstammung, die bei Verweisen in der Benutzeroberfläche verwendet wird.",
+          "label": "Abstammungsfarbe"
+        },
+        "icon": {
+          "hint": "Ein kleines Symbol, das diese Abstammung in der Benutzeroberfläche repräsentiert.",
+          "label": "Abstammungssymbol"
+        },
+        "label": "Benutzeroberfläche"
+      }
+    },
+    "SHEET": {
+      "Browse": "Abstammungen durchsuchen",
+      "Choose": "Abstammung wählen",
+      "Clear": "Abstammung entfernen",
+      "Identity": "Identität"
+    },
+    "WARNINGS": {
+      "Abilities": "Das primäre und sekundäre Attribut einer Abstammung dürfen nicht identisch sein.",
+      "ResistancesBoth": "Du musst sowohl Resistenz als auch Verwundbarkeit zuweisen, wenn du eines von beiden definierst.",
+      "ResistancesDifferent": "Die gewählte Resistenz und Verwundbarkeit einer Abstammung dürfen nicht identisch sein."
+    }
+  },
+  "ARCHETYPE": {
+    "FIELDS": {
+      "abilities": {
+        "hint": "Lege fest, wie die Attributswerte von Kreaturen dieses Archetyps mit steigender Stufe skalieren. Verteile 12 Punkte auf alle Attribute. Jeder Attributswert muss zwischen 0 und 6 liegen. Widersacher erhöhen ihre Attribute pro Stufe um 1 Punkt. Werte mit höherem Wert steigen häufiger. Werte von 0 steigen nie über ihren Basiswert hinaus.",
+        "label": "Attributskalierung"
+      },
+      "equipment": {
+        "hint": "Konfiguriere Ausrüstung, die dieser Archetyp automatisch erhält.",
+        "label": "Gewährte Ausrüstung"
+      },
+      "identifier": {
+        "hint": "Eine Zeichenkennung, mit der dieser Archetyp in Tags, Aktionen oder anderen UI-Elementen eindeutig referenziert wird. Diese Kennung muss alphanumerisch sein und darf keine Leerzeichen oder Sonderzeichen enthalten.",
+        "label": "Kennung"
+      },
+      "skills": {
+        "hint": "Konfiguriere eine Auswahl an Fertigkeiten, deren Trainingsrang für diesen Archetyp automatisch fortschreitet.",
+        "label": "Bevorzugte Fertigkeiten"
+      },
+      "spells": {
+        "hint": "Konfiguriere ikonische Zauber, die dieser Archetyp automatisch erhält.",
+        "label": "Gewährte Zauber"
+      },
+      "talents": {
+        "hint": "Konfiguriere ein oder mehrere Talente, die dieser Archetyp automatisch erhält.",
+        "label": "Gewährte Talente"
+      }
+    },
+    "SHEET": {
+      "Choose": "Archetyp wählen",
+      "Clear": "Archetyp entfernen",
+      "RequiredComponents": "<p><strong>{spell}</strong> erfordert Zauberkomponenten, die derzeit nicht auf diesem Archetyp vorhanden sind. Möchtest du sie automatisch hinzufügen?</p>",
+      "Skills": "Fertigkeitsfortschritt"
+    },
+    "WARNINGS": {
+      "InvalidAbilities": "Die Summe der Attributskalierungswerte muss 12 ergeben. Aktuell: {sum}",
+      "InvalidSpells": "Ein Archetyp darf keine doppelten Zauber haben.",
+      "NotEquipment": "Das abgelegte Dokument muss Ausrüstung sein.",
+      "NotSpell": "Das abgelegte Dokument muss ein ikonischer Zauber sein."
+    }
+  },
+  "ARMOR": {
+    "CATEGORIES": {
+      "Heavy": "Schwere Rüstung",
+      "Light": "Leichte Rüstung",
+      "Medium": "Mittlere Rüstung",
+      "Natural": "Natürlich",
+      "Unarmored": "Ungepanzert"
+    },
+    "FIELDS": {
+      "armor": {
+        "base": {
+          "label": "Basisrüstung"
+        },
+        "label": "Rüstung"
+      },
+      "properties": {
+        "label": "Rüstungseigenschaften"
+      }
+    },
+    "PROPERTIES": {
+      "Bulky": "Sperrig",
+      "Natural": "Natürlich",
+      "Noisy": "Laut"
+    },
+    "SHEET": {
+      "ArmorBonus": "Rüstungsbonus",
+      "Defenses": "Rüstungsverteidigungen",
+      "Dodge": "Ausweichen",
+      "DodgeBase": "Basis-Ausweichen",
+      "DodgeScaling": "Skalierungsschwelle"
+    },
+    "SPECIFIC": {
+      "Unarmored": "Ungepanzert"
+    }
+  },
+  "ATTACK": {
+    "RESULT_TYPES": {
+      "Armor": "Rüstung",
+      "Block": "Block",
+      "Dodge": "Ausweichen",
+      "Glance": "Streiftreffer",
+      "Hit": "Treffer",
+      "Miss": "Verfehlt",
+      "Parry": "Parade",
+      "Resist": "Widerstanden"
+    }
+  },
+  "ATTRIBUTES": {
+    "Abilities": "Attributswerte",
+    "Pools": "Ressourcenpools",
+    "Resistances": "Schadensresistenzen"
+  },
+  "AWARD": {
+    "LABELS": {
+      "Award": "Vergeben",
+      "Revoke": "Entziehen"
+    },
+    "MILESTONE": {
+      "Award": "Meilensteine vergeben",
+      "GroupAward": "{number} {label} wurden Gruppe {name} und den folgenden Mitgliedern vergeben:",
+      "GroupRevoke": "{number} {label} wurden Gruppe {name} und den folgenden Mitgliedern entzogen:",
+      "Identifier": "Kennung",
+      "IdentifierHint": "Eine eindeutige Kennung für die Meilensteinvergabe; muss ein Slug sein (keine Leerzeichen oder Sonderzeichen).",
+      "Recipients": "Meilensteinempfänger",
+      "RecipientsHint": "Bestimme einen oder mehrere Helden, die den Meilenstein erhalten.",
+      "Revoke": "Meilensteine entziehen",
+      "zero": "Meilensteine",
+      "one": "Meilenstein",
+      "two": "Meilensteine",
+      "few": "Meilensteine",
+      "many": "Meilensteine",
+      "other": "Meilensteine"
+    },
+    "SUMMARIES": {
+      "TABLE": {
+        "Formula": "Formel",
+        "Label": "Währung",
+        "Total": "Gesamt"
+      },
+      "Cost": "{award}-Kosten bezahlt von:",
+      "CostSplit": "{award}-Kosten aufgeteilt zwischen:",
+      "Reward": "{award} gewährt an:",
+      "RewardSplit": "{award} aufgeteilt zwischen:"
+    },
+    "TOOLTIPS": {
+      "Currency": "Währung vergeben",
+      "Milestone": "Meilenstein(e) vergeben"
+    },
+    "WARNINGS": {
+      "CannotAfford": "Die folgenden Figuren können die Kosten dieses Enrichers nicht bezahlen: {actors}",
+      "CannotRevokeMilestone": "Es gibt keine Meilensteinvergabe mit Kennung \"{identifier}\" bei Gruppe \"{group}\".",
+      "DuplicateMilestone": "Ein Meilenstein mit Kennung \"{identifier}\" wurde Gruppe \"{group}\" bereits vergeben.",
+      "InvalidMilestoneNumber": "Die Anzahl vergebener Meilensteine muss eine positive ganze Zahl sein.",
+      "InvalidMilestoneRecipient": "Figur-ID \"{id}\" kann keinen Meilenstein erhalten.",
+      "InvalidMilestoneRevokee": "Figur-ID \"{id}\" kann kein Meilenstein entzogen werden.",
+      "InvalidTerms": "{terms} konnten nicht als gültige Vergabebedingungen gelesen werden.",
+      "RequiresGM": "Du musst Spielleiter sein, um Vergabe-Enricher zu verwenden."
+    },
+    "Each": "jeweils",
+    "TitleCost": "Beitragszahler wählen",
+    "TitleReward": "Empfänger wählen"
+  },
+  "BACKGROUND": {
+    "ERRORS": {
+      "Apply": "Du kannst einen Hintergrund nur auf einen Stufe-0-Charakter ohne ausgegebene Fertigkeitspunkte anwenden.",
+      "TalentTier": "Hintergründe dürfen nur Starttalente des Rangs 0 gewähren."
+    },
+    "FIELDS": {
+      "description": {
+        "label": "Hintergrundbeschreibung"
+      },
+      "identifier": {
+        "hint": "Eine Zeichenkennung, mit der dieser Hintergrund in Tags, Aktionen oder anderen UI-Elementen eindeutig referenziert wird. Diese Kennung muss alphanumerisch sein und darf keine Leerzeichen oder Sonderzeichen enthalten.",
+        "label": "Kennung"
+      },
+      "knowledge": {
+        "hint": "Konfiguriere Wissensgebiete, die dieser Hintergrund automatisch gewährt. Typischerweise besitzt ein Hintergrund zwei Wissensgebiete.",
+        "label": "Wissensgebiete"
+      },
+      "languages": {
+        "hint": "Konfiguriere Sprachen, die dieser Hintergrund automatisch gewährt.",
+        "label": "Bekannte Sprachen"
+      },
+      "skills": {
+        "hint": "Konfiguriere Fertigkeiten, die dieser Hintergrund automatisch mit Anfängertraining gewährt. Typischerweise hat ein Hintergrund Training in zwei Fertigkeiten.",
+        "label": "Gewährte Fertigkeiten"
+      },
+      "talents": {
+        "hint": "Konfiguriere ein oder mehrere Talente, die dieser Hintergrund automatisch erhält. Typischerweise erhält ein Hintergrund zwei gewährte Talente.",
+        "label": "Erworbene Talente"
+      },
+      "ui": {
+        "color": {
+          "hint": "Eine repräsentative Farbe für diesen Hintergrund, die bei Verweisen in der Benutzeroberfläche verwendet wird.",
+          "label": "Hintergrundfarbe"
+        },
+        "icon": {
+          "hint": "Ein kleines Symbol, das diesen Hintergrund in der Benutzeroberfläche repräsentiert.",
+          "label": "Hintergrundsymbol"
+        },
+        "label": "Benutzeroberfläche"
+      }
+    },
+    "SHEET": {
+      "Browse": "Hintergründe durchsuchen",
+      "Choose": "Hintergrund wählen",
+      "Clear": "Hintergrund entfernen",
+      "Identity": "Identität",
+      "Skills": "Fertigkeiten",
+      "TalentAdd": "Talent hinzufügen",
+      "TalentDrop": "Füge diesem Hintergrund ein Talent hinzu, indem du es per Drag-and-drop aus dem Talente-Kompendium hineinziehst.",
+      "TalentRemove": "Talent entfernen"
+    }
+  },
+  "BASE_EFFECT": {
+    "FIELDS": {
+      "dot": {
+        "element": {
+          "amount": {
+            "hint": "Die Menge an Schaden (oder Wiederherstellung), die pro Zug erfolgen soll.",
+            "label": "Menge"
+          },
+          "damageType": {
+            "label": "Schadenstyp"
+          },
+          "resource": {
+            "hint": "Die Ressource, auf die dieser Schaden bzw. diese Wiederherstellung zielt.",
+            "label": "Ressource"
+          },
+          "restoration": {
+            "label": "Wiederherstellung"
+          }
+        },
+        "label": "Schaden über Zeit"
+      },
+      "maintenance": {
+        "cost": {
+          "label": "Aufrechterhaltungskosten"
+        },
+        "label": "Aufrechterhaltung"
+      },
+      "regions": {
+        "hint": "Die Regionen, die von diesem Effekt abhängig sind.",
+        "label": "Regionen"
+      },
+      "summons": {
+        "hint": "Die beschworenen Tokens, die von diesem Effekt abhängig sind.",
+        "label": "Beschwörungen"
+      }
+    }
+  },
+  "COMBAT": {
+    "INITIATIVE": {
+      "Combatant": "Kämpfer",
+      "Result": "Ergebnis",
+      "Round": "Initiative - Runde {round}"
+    },
+    "SUMMARY": {
+      "EffectExpired": "Abgelaufen",
+      "EffectGained": "Erhalten",
+      "EffectGainedDuration": "Erhalten ({duration})",
+      "HeaderEnd": "{actor} - Zugende",
+      "HeaderStart": "{actor} - Zugbeginn",
+      "Maintaining": "{effect} (Aufrechterhaltung)",
+      "TableTitleEffects": "Effektänderungen",
+      "TableTitleResources": "Ressourcenänderungen"
+    },
+    "WARNINGS": {
+      "CannotChangeRound": "Nur ein Spielleiter darf die Kampfrunde ändern."
+    },
+    "HeroismPct": "Heldentum {pct}%",
+    "HeroismTooltip": "Fortschritt zum nächsten Heldentumspunkt"
+  },
+  "CONSUMABLE": {
+    "CATEGORIES": {
+      "Ammunition": "Munition",
+      "Bomb": "Bombe",
+      "Flask": "Flasche",
+      "Kit": "Set",
+      "Other": "Sonstiges",
+      "Scroll": "Zauberschriftrolle",
+      "Trap": "Falle"
+    },
+    "FIELDS": {
+      "scroll": {
+        "gestures.label": "Gesten",
+        "hint": "Konfiguriere die Zauberkunst-Komponenten, deren Wissen diese Zauberschriftrolle vorübergehend gewährt.",
+        "inflections.label": "Inflektionen",
+        "label": "Zauberschriftrolle",
+        "runes.label": "Runen"
+      },
+      "uses": {
+        "hint": "Konfiguriere eine begrenzte Anzahl an Anwendungen dieses Verbrauchsgegenstands, bevor er verbraucht ist.",
+        "label": "Anwendungen",
+        "max.label": "Maximum",
+        "value.label": "Wert"
+      }
+    },
+    "SCROLL": {
+      "ComponentBudget": "Diese Schriftrolle kann bis zu {budget} Zauberkunst-Komponente(n) gewähren. Wähle aus, welche Komponenten diese Schriftrolle gewährt.",
+      "ComponentBudgetError": "Diese Schriftrolle darf insgesamt nur {budget} Zauberkunst-Komponente(n) enthalten, aber {total} wurden angegeben.",
+      "ConfigureTitle": "Zauberschriftrolle konfigurieren: {name}",
+      "NoComponents": "Diese Zauberschriftrolle ist leer und kann nicht gelesen werden.",
+      "ScrollName": "Schriftrolle von {scroll}"
+    },
+    "USES": {
+      "Of": "von",
+      "TagMax": {
+        "zero": "{value} Anwendungen",
+        "one": "{value} Anwendung",
+        "two": "{value} Anwendungen",
+        "few": "{value} Anwendungen",
+        "many": "{value} Anwendungen",
+        "other": "{value} Anwendungen"
+      },
+      "TagPartial": {
+        "zero": "{value}/{max} Anwendungen",
+        "one": "{value}/{max} Anwendung",
+        "two": "{value}/{max} Anwendungen",
+        "few": "{value}/{max} Anwendungen",
+        "many": "{value}/{max} Anwendungen",
+        "other": "{value}/{max} Anwendungen"
+      }
+    }
+  },
+  "CONTROLS": {
+    "VisualizeFlanking": "Flankierung anzeigen"
+  },
+  "CRUCIBLE": {
+    "SHEETS": {
+      "Accessory": "Crucible-Accessoirebogen",
+      "Adversary": "Crucible-Widersacherbogen",
+      "Affix": "Crucible-Affixbogen",
+      "Ancestry": "Crucible-Abstammungsbogen",
+      "Archetype": "Crucible-Archetypbogen",
+      "Armor": "Crucible-Rüstungsbogen",
+      "Background": "Crucible-Hintergrundbogen",
+      "Group": "Crucible-Gruppenbogen",
+      "Hero": "Crucible-Heldenbogen",
+      "HeroCreation": "Crucible-Heldenerstellungsbogen",
+      "Journal": "Crucible-Journalbogen",
+      "Schematic": "Crucible-Schemabogen",
+      "Skill": "Crucible-Fertigkeitsbogen",
+      "Spell": "Crucible-Zauberbogen",
+      "Talent": "Crucible-Talentbogen",
+      "Taxonomy": "Crucible-Taxonomiebogen",
+      "Tool": "Crucible-Werkzeugbogen",
+      "Weapon": "Crucible-Waffenbogen"
+    },
+    "Base": "Basis",
+    "Bonus": "Bonus",
+    "Rules": "Crucible-Regeln",
+    "Scaled": "Skaliert",
+    "Scaling": "Skalierung",
+    "Syncing": "Talente & Zauber werden synchronisiert"
+  },
+  "CURRENCY_DENOMINATIONS": {
+    "CP": {
+      "abbreviation": "CP",
+      "label": "Kupferstücke"
+    },
+    "GP": {
+      "abbreviation": "GP",
+      "label": "Goldstücke"
+    },
+    "PP": {
+      "abbreviation": "PP",
+      "label": "Platinstücke"
+    },
+    "SP": {
+      "abbreviation": "SP",
+      "label": "Silberstücke"
+    }
+  },
+  "DAMAGE": {
+    "Acid": "Säure",
+    "Bludgeoning": "Wucht",
+    "Cold": "Kälte",
+    "Corruption": "Verderbnis",
+    "Damage": "Schaden",
+    "Electricity": "Elektrizität",
+    "Elemental": "Elementar",
+    "Fire": "Feuer",
+    "Physical": "Physisch",
+    "Piercing": "Stich",
+    "Poison": "Gift",
+    "Psychic": "Psychisch",
+    "Radiant": "Strahlend",
+    "Restoration": "Wiederherstellung",
+    "Slashing": "Hieb",
+    "Spiritual": "Spirituell",
+    "Void": "Leere"
+  },
+  "DEFENSES": {
+    "TOOLTIPS": {
+      "Fortitude": "{base} + ((Stärke + Weisheit) / 4)",
+      "Madness": "{base} + (Wahnsinn / 10)",
+      "Reflex": "{base} + ((Geschicklichkeit + Intelligenz) / 4)",
+      "Willpower": "{base} + ((Zähigkeit + Präsenz) / 4)",
+      "Wounds": "{base} + (Wunden / 10)"
+    },
+    "Armor": "Rüstung",
+    "Block": "Block",
+    "Dodge": "Ausweichen",
+    "Fortitude": "Standhaftigkeit",
+    "Madness": "Sammelschwelle",
+    "Parry": "Parade",
+    "Physical": "Physisch",
+    "Reflex": "Reflex",
+    "Willpower": "Willenskraft",
+    "Wounds": "Heilungsschwelle"
+  },
+  "DICE": {
+    "DIFFICULTIES": {
+      "Challenging": "Herausfordernd",
+      "Custom": "Benutzerdefinierte Schwierigkeit",
+      "Difficult": "Schwierig",
+      "Easy": "Einfach",
+      "Formidable": "Furchteinflößend",
+      "Impossible": "Unmöglich",
+      "Moderate": "Moderat",
+      "Trivial": "Trivial"
+    },
+    "SKILLS": {
+      "AddSkill": "Fertigkeit hinzufügen",
+      "CustomizeSkills": "Fertigkeiten anpassen"
+    },
+    "GROUP_CHECK": {
+      "Title": "Gruppen-Fertigkeitsprobe",
+      "DialogTitle": "{skill}-Probe: {name}",
+      "NoUserForActor": "Kein aktiver Benutzer gefunden für: {name}",
+      "STATUSES": {
+        "Complete": "Abschließen",
+        "Pending": "Ausstehend",
+        "Aborted": "Abgebrochen",
+        "Skipped": "Übersprungen"
+      },
+      "Resend": "Anfrage erneut senden",
+      "RollOnBehalf": "Stellvertretend würfeln",
+      "Skip": "Figur überspringen",
+      "ResetPending": "Auf ausstehend zurücksetzen",
+      "RequiresGM": "Nur ein Spielleiter kann Gruppenproben starten."
+    },
+    "REQUESTS": {
+      "AddParty": "Gruppe hinzufügen",
+      "AnyActor": "Beliebige Figur",
+      "AnyActorHint": "Wähle beliebige Welt-Figuren.",
+      "ChooseTarget": "Ziel wählen",
+      "ClearRequest": "Anfrage löschen",
+      "Request": "Anfordern",
+      "RequestRolls": "Würfe anfordern",
+      "SpecificActors": "Bestimmte Figuren",
+      "SpecificActorsHint": "Wähle bestimmte relevante Figuren."
+    },
+    "Ability": "Attribut",
+    "AbilityBonus": "Attributsbonus",
+    "Banes": {
+      "zero": "Banes",
+      "one": "Bane",
+      "two": "Banes",
+      "few": "Banes",
+      "many": "Banes",
+      "other": "Banes"
+    },
+    "Boons": {
+      "zero": "Boons",
+      "one": "Boon",
+      "two": "Boons",
+      "few": "Boons",
+      "many": "Boons",
+      "other": "Boons"
+    },
+    "CircumstanceBonus": "Umstandsbonus",
+    "Confirm": "Bestätigen",
+    "Damage": "Schaden",
+    "DamageBase": "Basis-{type}",
+    "DamageBonus": "Aktionsbonus",
+    "DamageOverflow": "Überschuss",
+    "DamageResistance": "Schadensresistenz",
+    "DamageTotal": "Gesamtschaden",
+    "DamageVulnerability": "Schadensverwundbarkeit",
+    "DC": "SG",
+    "DCAdditionalPassive": "{dcLabel}, passiv",
+    "DCAdditionalGroup": "{dcLabel}, Gruppe",
+    "DCSpecific": "SG {dc}",
+    "DiceTotal": "Würfelsumme",
+    "Enchantment": "Verzauberung",
+    "EnchantmentBonus": "Verzauberungsbonus",
+    "Healing": "Heilung",
+    "Reverse": "Umkehren",
+    "Roll": "Würfeln",
+    "RollTotal": "Wurfergebnis",
+    "SetDifficulty": "Schwierigkeit festlegen",
+    "Skill": "Fertigkeit",
+    "SkillBonus": "Fertigkeitsbonus"
+  },
+  "FLANKED_EFFECT": {
+    "FIELDS": {
+      "allies": {
+        "label": "Bindende Verbündete"
+      },
+      "enemies": {
+        "label": "Bindende Feinde"
+      },
+      "flanked": {
+        "label": "Flankierungsstufe"
+      }
+    }
+  },
+  "HOOKS": {
+    "NoModuleHooks": "Für diese Kennung sind keine Modul-Hooks registriert.",
+    "ToggleSource": "Quelle umschalten"
+  },
+  "ITEM": {
+    "ACTIONS": {
+      "Create": "Gegenstand erstellen",
+      "Delete": "Gegenstand löschen",
+      "Drop": "Waffe fallen lassen",
+      "Edit": "Gegenstand bearbeiten",
+      "Equip": "{typeLabel} ausrüsten",
+      "EquipDetail": "{item} ausrüsten",
+      "Recover": "{typeLabel} aufheben",
+      "RecoverAllContent": "Alle fallen gelassenen Gegenstände von {actor} aufheben?",
+      "RecoverAllTitle": "Fallen gelassene Gegenstände aufheben",
+      "RecoverDetail": "Fallen gelassenes {item} aufheben",
+      "UnEquip": "{typeLabel} ablegen"
+    },
+    "FIELDS": {
+      "actions": {
+        "label": "Gegenstandsaktionen"
+      },
+      "broken": {
+        "label": "Beschädigt"
+      },
+      "category": {
+        "label": "Kategorie"
+      },
+      "description": {
+        "private": {
+          "hint": "Eine Beschreibung dieses Gegenstands, die nur für Spielleiter sichtbar ist.",
+          "label": "Geheime Beschreibung"
+        },
+        "public": {
+          "hint": "Eine Beschreibung dieses Gegenstands, die für alle Benutzer mit mindestens OBSERVER-Berechtigung sichtbar ist.",
+          "label": "Öffentliche Beschreibung"
+        }
+      },
+      "enchantment": {
+        "label": "Verzauberungsrang"
+      },
+      "equipped": {
+        "label": "Ausgerüstet"
+      },
+      "identifier": {
+        "hint": "Eine eindeutige Zeichenkennung, mit der dieser Gegenstand referenziert wird. Mehrere Kopien desselben Gegenstands teilen sich dieselbe Kennung.",
+        "label": "Kennung"
+      },
+      "invested": {
+        "label": "Investiert"
+      },
+      "price": {
+        "label": "Grundpreis"
+      },
+      "properties": {
+        "label": "Gegenstandseigenschaften"
+      },
+      "quality": {
+        "label": "Qualität"
+      },
+      "quantity": {
+        "label": "Anzahl"
+      },
+      "weight": {
+        "label": "Gewicht"
+      }
+    },
+    "PROPERTIES": {
+      "Armor": "{armor} Rüstung",
+      "Block": "Blocken {block}",
+      "Damage": "{damage} Schaden",
+      "Defense": "{defense} Verteidigung",
+      "Depleted": "Verbraucht",
+      "Dodge": "{dodge} Ausweichen",
+      "DodgeBase": "{dodge}+ Ausweichen",
+      "Investment": "Investition",
+      "NotInvested": "Nicht investiert",
+      "NotKnown": "Unbekannt",
+      "Parry": "Parieren {parry}",
+      "Range": "Reichweite {range}",
+      "Stackable": "Stapelbar",
+      "Unequipped": "Nicht ausgerüstet",
+      "Unique": "Einzigartig"
+    },
+    "SHEET": {
+      "Details": "Gegenstandsdetails",
+      "NoAffixCapacity": "Die Qualität dieses Gegenstands ist zu niedrig, um Affixe zu unterstützen. Verbessere ihn auf feine oder bessere Qualität.",
+      "NoAffixCapacityTitle": "Verzauberung nicht möglich",
+      "NoAffixes": "Ziehe ein Affix aus dem Affixe-Kompendium hierher, um es anzuwenden.",
+      "UniqueItemTitle": "Einzigartiger Gegenstand",
+      "UniqueItemNoAffixes": "Dieser Gegenstand ist einzigartig und kann nicht mit Affixen verzaubert werden. Seine magischen Eigenschaften werden durch Modul-Hooks definiert.",
+      "EnchantmentDerivedHint": "Der Verzauberungsrang ergibt sich aus der Gesamtsumme der angewendeten Affix-Ränge.",
+      "Equipment": "Ausrüstungsdetails",
+      "EquipmentDrop": "Füge Startausrüstung hinzu, indem du Gegenstände per Drag-and-drop in diesen Bereich ziehst.",
+      "EquipmentRemove": "Ausrüstung entfernen",
+      "ScaledPrice": "Skalierter Preis",
+      "Spellcraft": "Zauberkunst",
+      "SpellDrop": "Füge einen ikonischen Zauber hinzu, indem du einen Zaubergegenstand per Drag-and-drop in diesen Bereich ziehst.",
+      "SpellRemove": "Zauber entfernen",
+      "TalentAdd": "Talent hinzufügen",
+      "TalentConfiguration": "Talentkonfiguration",
+      "TalentDrop": "Füge ein Talent hinzu, indem du einen Talentgegenstand per Drag-and-drop in diesen Bereich ziehst.",
+      "TalentRemove": "Talent entfernen",
+      "Type": "Ausrüstungstyp"
+    },
+    "TABS": {
+      "actions": "Aktionen",
+      "affixes": "Affixe",
+      "config": "Konfiguration",
+      "description": "Beschreibung",
+      "equipment": "Ausrüstung",
+      "hooks": "Hooks",
+      "secrets": "Geheimnisse",
+      "spells": "Zauber",
+      "talents": "Talente"
+    },
+    "WARNINGS": {
+      "HookAlreadyExists": "{item} deklariert bereits eine Funktion für den Hook \"{hook}\".",
+      "InvalidIdentifier": "Ungültiger Crucible-Kennungswert \"{id}\". Er muss alphanumerisch sein und darf keine Leerzeichen oder Sonderzeichen enthalten.",
+      "NotTalent": "Das abgelegte Dokument muss ein Talent sein.",
+      "QualityReductionBlocked": "Die Qualität von {name} kann nicht verringert werden, weil es Affixe besitzt, die die aktuelle Kapazität benötigen.",
+      "UniqueWithAffixes": "{name} kann nicht als einzigartig markiert werden, weil es Affixe besitzt. Entferne zuerst alle Affixe.",
+      "LootDropError": "Beutegegenstand \"{name}\" konnte nicht erstellt werden. {reason}"
+    },
+    "RANDOMIZE": {
+      "Title": "Verzauberten Gegenstand zufällig erstellen",
+      "Flavor": "Zufälliger Gegenstand: {type}",
+      "PriceMin": "Mindestpreis",
+      "PriceMax": "Höchstpreis",
+      "BaseItem": "Basisgegenstand",
+      "ItemTypes": "Gegenstandstypen",
+      "Quality": "Qualitätsrang",
+      "QualityAny": "Beliebig",
+      "Generate": "Erstellen",
+      "GMOnly": "Nur ein Spielleiter kann zufällige Gegenstände erstellen."
+    },
+    "EnchantmentLegendary": "Legendär",
+    "EnchantmentMajor": "Mächtig",
+    "EnchantmentMinor": "Gering",
+    "EnchantmentMundane": "Gewöhnlich",
+    "QualityFine": "Fein",
+    "QualityMasterwork": "Meisterarbeit",
+    "QualityShoddy": "Minderwertig",
+    "QualityStandard": "Standard",
+    "QualitySuperior": "Überlegen"
+  },
+  "KEYBINDINGS": {
+    "ConfirmAction": "Aktion bestätigen",
+    "ConfirmActionHint": "Bestätige Aktionen, die innerhalb der letzten 60 Sekunden aufgezeichnet wurden, in der Reihenfolge ihrer Ausführung."
+  },
+  "KNOWLEDGE": {
+    "Alchemy": "Alchemie",
+    "Ancients": "Uralte",
+    "Artifacts": "Artefakte",
+    "Arts": "Künste",
+    "Beasts": "Bestien",
+    "Celestials": "Himmlische",
+    "Cosmology": "Kosmologie",
+    "Crafts": "Handwerk",
+    "Crime": "Verbrechen",
+    "Dragons": "Drachen",
+    "Elementals": "Elementare",
+    "Fey": "Feenwesen",
+    "Fiends": "Scheusale",
+    "Forensics": "Forensik",
+    "Gods": "Götter",
+    "Intrigue": "Intrige",
+    "Legends": "Legenden",
+    "Machines": "Maschinen",
+    "Monsters": "Monster",
+    "Outsiders": "Außenseiter",
+    "Plants": "Pflanzen",
+    "Politics": "Politik",
+    "Rituals": "Rituale",
+    "Seafaring": "Seefahrt",
+    "Souls": "Seelen",
+    "Subterranea": "Unterwelt",
+    "Tracking": "Spurenlesen",
+    "Trade": "Handel",
+    "Undeath": "Untod",
+    "Warfare": "Kriegsführung",
+    "Weather": "Wetter"
+  },
+  "LANGUAGE_CATEGORIES": {
+    "Nonspoken": "Nicht gesprochene Sprachen",
+    "Spoken": "Gesprochene Sprachen"
+  },
+  "LANGUAGES": {
+    "Common": "Gemeinsprache",
+    "Sign": "Zeichensprache"
+  },
+  "LOOT": {
+    "CATEGORIES": {
+      "Ingredient": "Zutat",
+      "Other": "Verschiedenes",
+      "Treasure": "Schatz"
+    }
+  },
+  "RESOURCES": {
+    "TOOLTIPS": {
+      "Action": "6 + Aktionsbonus",
+      "Focus": "(Weisheit + Präsenz + Intelligenz) / 2",
+      "Health": "(6 &times; Stufe) + (4 &times; Zähigkeit) + (2 &times; Stärke)",
+      "Heroism": "Maximum 3",
+      "Madness": "Moral &times; 1,5",
+      "Morale": "(6 &times; Stufe) + (4 &times; Präsenz) + (2 &times; Weisheit)",
+      "Wounds": "Gesundheit &times; 1,5"
+    },
+    "Action": "Aktion",
+    "Focus": "Fokus",
+    "Health": "Gesundheit",
+    "Heroism": "Heldentum",
+    "Madness": "Wahnsinn",
+    "Morale": "Moral",
+    "Wounds": "Wunden"
+  },
+  "RULER": {
+    "CannotAffordMove": "Du kannst es dir nicht leisten, dich {distance} Felder zu bewegen; dies kostet {action} Aktionspunkte."
+  },
+  "SCHEMATIC": {
+    "CATEGORIES": {
+      "Alchemy": "Alchemieformel",
+      "Cooking": "Kochrezept",
+      "Enchanting": "Verzauberungsglyphe",
+      "Fletching": "Befiederungsentwurf",
+      "Glyphweaving": "Glyphengewebe-Arkanum",
+      "Jewelcraft": "Juweliersdiagramm",
+      "Smithing": "Schmiedeplan",
+      "Tailoring": "Schneidermuster"
+    },
+    "FIELDS": {
+      "dc": {
+        "hint": "Lege den Wert fest, der bei einer Handwerksprobe überschritten werden muss, um dieses Schema erfolgreich herzustellen.",
+        "label": "Schwierigkeitsgrad"
+      },
+      "hours": {
+        "hint": "Die benötigte Zeit in Stunden für den Herstellungsversuch.",
+        "label": "Stunden"
+      },
+      "inputs": {
+        "element": {
+          "currency": {
+            "hint": "Die Herstellung dieses Schemas kann eine bestimmte Menge an Währung erfordern, um benötigte Vorräte oder kleinere Zutaten darzustellen, die nicht explizit als Gegenstände modelliert sind.",
+            "label": "Währung"
+          },
+          "ingredients": {
+            "element": {
+              "consumed": {
+                "hint": "Werden diese Zutaten beim Herstellungsversuch verbraucht?",
+                "label": "Verbraucht"
+              },
+              "item.label": "Zutaten-Gegenstands-UUID",
+              "quality": {
+                "hint": "Die erforderliche Mindestqualität dieser Zutat.",
+                "label": "Erforderliche Qualität"
+              },
+              "quantity": {
+                "label": "Erforderliche Anzahl"
+              }
+            },
+            "label": "Zutaten"
+          },
+          "mode.label": "Kombinationsmodus"
+        },
+        "label": "Schema-Eingaben"
+      },
+      "mode.label": "Kombinationsmodus",
+      "outputs": {
+        "element": {
+          "items.element.label": "Erstellter Gegenstands-UUID",
+          "mode": "Modus"
+        },
+        "label": "Schema-Ausgaben"
+      }
+    },
+    "MODES": {
+      "All": "Alle",
+      "Any": "Beliebig",
+      "Template": "Vorlage"
+    },
+    "PROPERTIES": {
+      "Common": "Allgemein bekannt"
+    },
+    "SHEET": {
+      "Components": "Komponenten",
+      "InputAdd": "Eingabegruppe hinzufügen",
+      "InputDrop": "Eingabegegenstand ablegen",
+      "InputRemove": "Eingabegruppe entfernen",
+      "Inputs": "Eingaben",
+      "ItemRemove": "Eingabegegenstand entfernen",
+      "OutputAdd": "Ausgabegruppe hinzufügen",
+      "OutputDrop": "Ausgabegegenstand ablegen",
+      "OutputRemove": "Ausgabegruppe entfernen",
+      "Outputs": "Ausgaben"
+    }
+  },
+  "SETTINGS": {
+    "COMPENDIUM_SOURCES": {
+      "affix": {
+        "hint": "Welche Pakete als Quellen für Gegenstandsaffixe zur Verzauberung verwendet werden.",
+        "label": "Affix-Quellen"
+      },
+      "ancestry": {
+        "hint": "Welche Pakete während der Charaktererstellung als Quellen für Abstammungen verwendet werden.",
+        "label": "Abstammungsquellen"
+      },
+      "background": {
+        "hint": "Welche Pakete während der Charaktererstellung als Quellen für Hintergründe verwendet werden.",
+        "label": "Hintergrundquellen"
+      },
+      "equipment": {
+        "hint": "Welche Pakete während der Charaktererstellung als Quellen für Startausrüstung verwendet werden.",
+        "label": "Ausrüstungsquellen"
+      },
+      "hint": "Konfiguriere, welche Kompendiumspakete während der Charaktererstellung als Quellen verwendet werden können.",
+      "label": "Kompendiumsquellen konfigurieren",
+      "name": "Kompendiumsquellen",
+      "spell": {
+        "hint": "Welche Pakete als Quellen für ikonische Zauber verwendet werden.",
+        "label": "Zauberquellen"
+      },
+      "talent": {
+        "hint": "Welche Pakete als Quellen für Talente im Talentbaum verwendet werden.",
+        "label": "Talentquellen"
+      }
+    },
+    "AutoConfirmAll": "Alle Aktionen automatisch bestätigen",
+    "AutoConfirmHint": "Aktiviere die automatische Bestätigung von Aktionen im Kampf, die keinen Schaden verursachen und keine aktiven Effekte auslösen. Das kann das Spiel beschleunigen, wird aber im Playtest nicht empfohlen.",
+    "AutoConfirmName": "Automatische Aktionsbestätigung",
+    "AutoConfirmNone": "Keine automatische Bestätigung",
+    "AutoConfirmSelf": "Nur Aktionen auf sich selbst",
+    "CruciblePartyHint": "Konfiguriere, welche Gruppenfigur die primäre Heldengruppe ist.",
+    "CruciblePartyLabel": "Primäre Abenteurergruppe",
+    "EnableVFXHint": "Spiele visuelle Effektanimationen auf der Arbeitsfläche ab, wenn Aktionen bestätigt werden.",
+    "EnableVFXName": "Visuelle Aktionseffekte aktivieren"
+  },
+  "SKILL": {
+    "CATEGORY": {
+      "CRAFTING": {
+        "hint": "Handwerkliche Fertigkeiten, die die Fähigkeit deines Charakters widerspiegeln, Gegenstände oder Ausrüstung herzustellen.",
+        "label": "Handwerk"
+      },
+      "EXPLORATION": {
+        "hint": "Erkundungsfertigkeiten betreffen deine Fähigkeit, die Welt zu bereisen und ihren Herausforderungen zu begegnen.",
+        "label": "Erkundung"
+      },
+      "KNOWLEDGE": {
+        "hint": "Wissensfertigkeiten betreffen das Wissen und Verständnis deines Charakters in verschiedenen Themenbereichen.",
+        "label": "Wissen"
+      },
+      "SOCIAL": {
+        "hint": "Soziale Fertigkeiten betreffen die Fähigkeit deines Charakters, mit anderen Personen oder Gruppen zu interagieren.",
+        "label": "Sozial"
+      }
+    },
+    "LABELS": {
+      "alchemy": "Alchemie",
+      "arcana": "Arkana",
+      "athletics": "Athletik",
+      "awareness": "Wahrnehmung",
+      "cooking": "Kochen",
+      "deception": "Täuschung",
+      "diplomacy": "Diplomatie",
+      "enchanting": "Verzaubern",
+      "fletching": "Befiedern",
+      "glyphweaving": "Glyphenweben",
+      "intimidation": "Einschüchtern",
+      "jewelcraft": "Juwelenschleifen",
+      "medicine": "Heilkunde",
+      "performance": "Auftreten",
+      "science": "Wissenschaft",
+      "smithing": "Schmieden",
+      "society": "Gesellschaft",
+      "stealth": "Heimlichkeit",
+      "tailoring": "Schneidern",
+      "wilderness": "Wildnis"
+    },
+    "RANKS": {
+      "ADEPT": {
+        "hint": "Du bist Experte auf diesem Gebiet und beherrschst alle Grundkompetenzen und Anwendungen dieser Fertigkeit.",
+        "label": "Adept"
+      },
+      "APPRENTICE": {
+        "hint": "Du hast die Techniken dieser Fertigkeit verfeinert und zu starker praktischer Kompetenz entwickelt.",
+        "label": "Lehrling"
+      },
+      "MASTER": {
+        "hint": "Du bist in der Meisterschaft dieser Fertigkeit und deines fortgeschrittenen Spezialisierungspfads unerreicht.",
+        "label": "Meister"
+      },
+      "NOVICE": {
+        "hint": "Du hast formale Ausbildung oder praktische Erfahrung in den grundlegenden Anwendungen dieser Fertigkeit.",
+        "label": "Anfänger"
+      },
+      "SPECIALIST": {
+        "hint": "Deine Beherrschung dieser Fertigkeit wird durch Expertise in einem fortgeschrittenen Spezialisierungspfad erhöht.",
+        "label": "Spezialist"
+      },
+      "UNSPECIALIZED": {
+        "hint": "Du hast für diese Fertigkeit noch keinen Spezialisierungspfad erreicht.",
+        "label": "Unspezialisiert"
+      },
+      "UNTRAINED": {
+        "hint": "Du hast in diesem Bereich keine formale Ausbildung. Jeder Erfolg bei der Anwendung dieser Fertigkeit beruht auf gesundem Menschenverstand oder Glück.",
+        "label": "Ungeübt"
+      }
+    },
+    "AcquiredRanks": "Erworbene Ränge",
+    "CantAfford": "Du kannst es dir nicht leisten, diese Fertigkeit zu erhöhen. Der nächste Rang kostet {cost} Punkte und du hast {points} Fertigkeitspunkte verfügbar.",
+    "CategoryHeader": "{category}-Fertigkeiten",
+    "ChoosePath": "Du musst einen Spezialisierungspfad wählen, bevor du diese Fertigkeit weiter steigerst.",
+    "Id": "Fertigkeits-ID",
+    "Overview": "Fertigkeitsübersicht",
+    "PageSheet": "Crucible-Fertigkeit",
+    "PassiveSpecific": "Passiv: {passive}",
+    "PathId": "Pfad-ID",
+    "PathName": "Pfadname",
+    "PathOverview": "Pfadübersicht",
+    "Ranks": "Fertigkeitsränge",
+    "RollFlavor": "{name} würfelt eine {skill}-Probe",
+    "RollTitle": "[{name}] {skill}-Fertigkeitsprobe",
+    "SheetTitle": "[{actor}] {skill}-Fertigkeit",
+    "SpecializationPaths": "Spezialisierungspfade",
+    "SpecializationPathSelect": "Spezialisierung wählen",
+    "SpecializationPathSpecific": "Spezialisierungspfad: {path}",
+    "Summary": "Fertigkeitszusammenfassung",
+    "TooltipCheck": "[({a1} + {a2}) / 4] + Fertigkeitsbonus + Verzauberungsbonus",
+    "TooltipPassive": "12 + Wert",
+    "UnacquiredRanks": "Nicht erworbene Ränge"
+  },
+  "SPELL": {
+    "COMPONENTS": {
+      "Gesture": "Somatische Geste",
+      "GestureNone": "Keine somatischen Gesten bekannt.",
+      "GesturePl": "Somatische Gesten",
+      "GestureSpecific": "Geste: {gesture}",
+      "Inflection": "Metamagische Inflektion",
+      "InflectionNone": "Keine metamagischen Inflektionen bekannt.",
+      "InflectionPl": "Metamagische Inflektionen",
+      "InflectionSpecific": "Inflektion: {inflection}",
+      "MissingGesture": "Keine Geste",
+      "MissingInflection": "Keine Inflektion",
+      "MissingRune": "Keine Rune",
+      "Rune": "Arkane Rune",
+      "RuneNone": "Keine arkanen Runen bekannt.",
+      "RunePl": "Arkane Runen",
+      "RuneSpecific": "Rune: {rune}"
+    },
+    "COUNTERSPELL": {
+      "WARNINGS": {
+        "BadTarget": "Du kannst nur den Wirker der letzten Aktion mit einem Gegenzauber belegen; diese Aktion muss ein Zauber sein.",
+        "CannotConfirm": "Gegenzauber kann nicht {change} werden, wenn der Zielzauber bereits {state} ist.",
+        "InvalidTerms": "{terms} konnten nicht als gültige Gegenzauber-Bedingungen gelesen werden.",
+        "MissingComponents": "Ein Gegenzauber-Enricher muss mindestens 1 Rune und 1 Geste haben.",
+        "NoTalent": "{actor} besitzt das Talent Gegenzauber nicht.",
+        "NoUser": "Keine Nicht-SL-Benutzer anwesend, um Gegenzauber für Figur {actor} abzuwickeln."
+      },
+      "Detailed": "Gegenzauber ({details})",
+      "Name": "Gegenzauber",
+      "OpposingRune": "Gegenzauber: Entgegengesetzte Rune",
+      "SameGesture": "Gegenzauber: Gleiche Geste",
+      "Tags": "Gegenzauber-Tags",
+      "TargetGesture": "Zielgeste: {gesture}",
+      "TargetRune": "Zielrune: {rune}",
+      "UseForActor": "Gegenzauber verwenden für: {actor}"
+    },
+    "FIELDS": {
+      "actions": {
+        "hint": "Verknüpfe Aktionen, die Charakteren zur Verfügung stehen, die diesen ikonischen Zauber kennen.",
+        "label": "Gewährte Aktionen"
+      },
+      "description": {
+        "label": "Zauberbeschreibung"
+      },
+      "gestures": {
+        "hint": "Die Gesten, die bekannt sein müssen, um diesen ikonischen Zauber zu lernen.",
+        "label": "Gesten"
+      },
+      "inflections": {
+        "hint": "Die Inflektionen, die bekannt sein müssen, um diesen ikonischen Zauber zu lernen.",
+        "label": "Inflektionen"
+      },
+      "runes": {
+        "hint": "Die Runen, die bekannt sein müssen, um diesen ikonischen Zauber zu lernen.",
+        "label": "Runen"
+      }
+    },
+    "GESTURES": {
+      "Arrow": "Pfeil",
+      "Aspect": "Aspekt",
+      "Aura": "Aura",
+      "Blast": "Explosion",
+      "Cone": "Kegel",
+      "Conjure": "Beschwörung",
+      "Create": "Erschaffung",
+      "Fan": "Fächer",
+      "Influence": "Einfluss",
+      "Pulse": "Impuls",
+      "Ray": "Strahl",
+      "Sense": "Wahrnehmen",
+      "Step": "Schritt",
+      "Strike": "Angriff",
+      "Surge": "Woge",
+      "Touch": "Berührung",
+      "Ward": "Schutz"
+    },
+    "INFLECTIONS": {
+      "Compose": "Komponieren",
+      "ComposeAdj": "Komponiert",
+      "Determine": "Bestimmen",
+      "DetermineAdj": "Bestimmt",
+      "Elude": "Entziehen",
+      "EludeAdj": "Entziehend",
+      "Extend": "Ausdehnen",
+      "ExtendAdj": "Ausgedehnt",
+      "Negate": "Negieren",
+      "NegateAdj": "Negiert",
+      "Pull": "Ziehen",
+      "PullAdj": "Anziehend",
+      "Push": "Stoßen",
+      "PushAdj": "Abstoßend",
+      "Quicken": "Beschleunigen",
+      "QuickenAdj": "Beschleunigt",
+      "React": "Reagieren",
+      "ReactAdj": "Reaktiv",
+      "Reshape": "Umformen",
+      "ReshapeAdj": "Geformt"
+    },
+    "NAMES": {
+      "CurseConductivity": "Fluch der Leitfähigkeit",
+      "CurseCowardice": "Fluch der Feigheit",
+      "CurseFigments": "Fluch der Trugbilder",
+      "CurseFlammability": "Fluch der Brennbarkeit",
+      "CurseFrostbite": "Fluch der Erfrierung",
+      "CurseLaceration": "Fluch der Zerfleischung",
+      "CurseMortality": "Fluch der Sterblichkeit",
+      "CurseNullification": "Fluch der Aufhebung",
+      "CurseParanoia": "Fluch der Paranoia",
+      "CursePerforation": "Fluch der Durchbohrung",
+      "CursePorosity": "Fluch der Porosität",
+      "CurseRadiance": "Fluch des Strahlens",
+      "CurseShattering": "Fluch des Zersplitterns",
+      "CurseToxicity": "Fluch der Toxizität"
+    },
+    "RUNES": {
+      "Control": "Kontrolle",
+      "ControlAdj": "Kontrollierend",
+      "Death": "Tod",
+      "DeathAdj": "Tödlich",
+      "Earth": "Erde",
+      "EarthAdj": "Irden",
+      "Flame": "Flamme",
+      "FlameAdj": "Flammend",
+      "Frost": "Frost",
+      "FrostAdj": "Eisig",
+      "Illumination": "Erleuchtung",
+      "IlluminationAdj": "Erleuchtet",
+      "Illusion": "Illusion",
+      "IllusionAdj": "Illusorisch",
+      "Kinesis": "Kinese",
+      "KinesisAdj": "Kinetisch",
+      "Life": "Leben",
+      "LifeAdj": "Vital",
+      "Oblivion": "Vergessenheit",
+      "OblivionAdj": "Vernichtend",
+      "Soul": "Seele",
+      "SoulAdj": "Seelenvoll",
+      "Storm": "Blitz",
+      "StormAdj": "Voltaisch"
+    },
+    "SHEET": {
+      "Knowledge": "Erforderliches Wissen"
+    },
+    "WARNINGS": {
+      "BindArmamentAlreadyBound": "Waffe ist bereits gebunden",
+      "BindArmamentNoMainhand": "keine Haupthandwaffe",
+      "CannotAffordHands": {
+        "zero": "Der Zauber {action} erfordert {hands} freie Hände zum Wirken.",
+        "one": "Der Zauber {action} erfordert {hands} freie Hand zum Wirken.",
+        "two": "Der Zauber {action} erfordert {hands} freie Hände zum Wirken.",
+        "few": "Der Zauber {action} erfordert {hands} freie Hände zum Wirken.",
+        "many": "Der Zauber {action} erfordert {hands} freie Hände zum Wirken.",
+        "other": "Der Zauber {action} erfordert {hands} freie Hände zum Wirken."
+      },
+      "CannotUseNotComposed": "Du kannst keinen Zauber wirken, der noch nicht vollständig komponiert wurde.",
+      "CannotUseSilenced": "Inflektionen können nicht verwendet werden, solange du Stumm bist.",
+      "IconicAlreadyKnown": "Figur {actor} kennt den ikonischen Zauber {spell} bereits.",
+      "IconicNoSlots": "Figur {actor} hat keine verfügbaren Plätze für ikonische Zauber.",
+      "IconicNotSatisfied": "Figur {actor} erfüllt die Wissensanforderungen nicht, um den ikonischen Zauber {spell} zu lernen.",
+      "NotConfigured": "Dieser ikonische Zauber ist noch nicht vollständig konfiguriert. Alle drei Zauberkunst-Komponenten müssen definiert sein.",
+      "SorcererNoIconic": "Als {talent} kannst du keine ikonischen Zauber wirken."
+    },
+    "DamageType": "Schadenstyp",
+    "Iconic": "Ikonischer Zauber",
+    "IconicPl": "Ikonische Zauber",
+    "NameFormatAdj": "{rune} {gesture}",
+    "NameFormatNoun": "{gesture} der {rune}"
+  },
+  "TALENT": {
+    "ACTIONS": {
+      "ActionAdd": "Aktion hinzufügen",
+      "ActionDelete": "Aktion löschen",
+      "ActionEdit": "Aktion bearbeiten",
+      "Delete": "Talent löschen",
+      "Edit": "Talent bearbeiten",
+      "HookAdd": "Hook hinzufügen",
+      "HookDelete": "Hook löschen",
+      "Purchase": "<p>1 Talentpunkt ausgeben, um <strong>{name}</strong> zu erwerben?</p>",
+      "PurchaseNode": "Talentpunkt ausgeben, um leeren Knoten \"{node}\" zu erwerben?",
+      "PurchaseNodeReverse": "Ausgegebenen Punkt von leerem Knoten \"{node}\" entfernen?",
+      "PurchaseNodeTitle": "Talentknoten erwerben?",
+      "PurchaseTitle": "Talent erwerben: {name}",
+      "Reset": "Zurücksetzen"
+    },
+    "FIELDS": {
+      "actions": {
+        "hint": "Verknüpfe Aktionen, die Charakteren zur Verfügung stehen, die dieses Talent besitzen.",
+        "label": "Gewährte Aktionen"
+      },
+      "actorHooks": {
+        "hint": "Dieser Konfigurationsreiter enthält fortgeschrittene Funktionen zur Automatisierung von Talenteffekten. Eine falsche Konfiguration kann schwerwiegende Folgen haben. Nimm hier nur Änderungen vor, wenn du dir sicher bist, was du tust.",
+        "label": "Hook-Funktionen"
+      },
+      "description": {
+        "label": "Talentbeschreibung"
+      },
+      "gesture": {
+        "hint": "Der Erwerb dieses Talents gewährt Wissen über eine bestimmte Zauberkunst-Geste.",
+        "label": "Geste"
+      },
+      "iconicSpells": {
+        "hint": "Die Anzahl an Plätzen für ikonische Zauber, die dieses Talent gewährt.",
+        "label": "Ikonische Zauber"
+      },
+      "inflection": {
+        "hint": "Der Erwerb dieses Talents gewährt Wissen über eine bestimmte Zauberkunst-Inflektion.",
+        "label": "Inflektion"
+      },
+      "nodes": {
+        "hint": "Weise dieses Talent einem oder mehreren bestimmten Knoten im Talentbaum zu, über die es erworben werden kann.",
+        "label": "Talentknoten"
+      },
+      "rune": {
+        "hint": "Der Erwerb dieses Talents gewährt Wissen über eine bestimmte Zauberkunst-Rune.",
+        "label": "Rune"
+      },
+      "training": {
+        "hint": "Gewährt dieses Talent einen Trainingsrang in einem bestimmten Bereich?",
+        "label": "Gewährtes Training",
+        "rank.label": "Trainingsrang",
+        "type.label": "Trainingstyp"
+      }
+    },
+    "HOOKS": {
+      "GroupAction": "Aktionsnutzung",
+      "GroupCombat": "Kampfzüge",
+      "GroupEquipment": "Ausrüstungsvorbereitung",
+      "GroupPreparation": "Figurendatenvorbereitung",
+      "GroupSpellcraft": "Zauberkunst-Vorbereitung",
+      "Register": "Hook-Funktion registrieren"
+    },
+    "LABELS": {
+      "Points": {
+        "zero": "Punkte",
+        "one": "Punkt",
+        "two": "Punkte",
+        "few": "Punkte",
+        "many": "Punkte",
+        "other": "Punkte"
+      },
+      "Talents": {
+        "zero": "Talente",
+        "one": "Talent",
+        "two": "Talente",
+        "few": "Talente",
+        "many": "Talente",
+        "other": "Talente"
+      }
+    },
+    "NODES": {
+      "Attack": "Angriff",
+      "Defense": "Verteidigung",
+      "Heal": "Heilung",
+      "Magic": "Magie",
+      "Melee": "Nahkampf",
+      "Move": "Bewegung",
+      "Origin": "Herkunft",
+      "Ranged": "Fernkampf",
+      "Signature": "Signatur",
+      "Skill": "Fertigkeit",
+      "Spell": "Zauberkunst",
+      "Training": "Training",
+      "Utility": "Nützlichkeit"
+    },
+    "RANKS": {
+      "Expert": "Experte",
+      "Master": "Meister",
+      "Proficient": "Geübt",
+      "Trained": "Trainiert",
+      "Untrained": "Ungeübt"
+    },
+    "TRAINING": {
+      "Craft": "Handwerkskunst-Training",
+      "Skill": "Fertigkeitstraining",
+      "Spell": "Zauberkunst-Training",
+      "Weapon": "Waffentraining"
+    },
+    "WARNINGS": {
+      "AlreadyOwned": "Du besitzt {name} bereits und kannst es kein zweites Mal hinzufügen.",
+      "Banned": "Du kannst an diesem Knoten oder Rang keine zusätzlichen Signaturtalente erwerben.",
+      "CannotAfford": "Du hast nicht genügend Talentpunkte, um {name} zu erwerben. Es kostet {cost} Punkte.",
+      "CannotUse": "Du kannst dieses Talent nicht verwenden.",
+      "Inaccessible": "Du kannst \"{name}\" nicht erwerben, weil du diesen Talentbaum-Knoten nicht freigeschaltet hast.",
+      "Locked": "Du erfüllst die Anforderungen nicht, um \"{name}\" zu erwerben. Erforderlich: {requires} {requirement}.",
+      "RequiresRuneGesture": "Du musst eine Zauberkunst-Rune kennen, um eine Geste zu verwenden.",
+      "RequiresRuneInflection": "Du musst eine Zauberkunst-Rune kennen, um eine Inflektion zu verwenden."
+    },
+    "GrantsSpells": "<strong>Ikonische Zauber:</strong> {name} gewährt {spells} Plätze für ikonische Zauber.",
+    "NodeSpecific": "{nodeType}-Knoten",
+    "PointsAvailable": "Verfügbare Punkte",
+    "Prerequisites": "Voraussetzungen"
+  },
+  "TAXONOMY": {
+    "CATEGORIES": {
+      "Beast": "Bestie",
+      "Celestial": "Himmlischer",
+      "Construct": "Konstrukt",
+      "Dragon": "Drache",
+      "Elemental": "Elementar",
+      "ElementalEarth": "Erdelementar",
+      "ElementalFire": "Feuerelementar",
+      "ElementalFrost": "Frostelementar",
+      "ElementalStorm": "Sturmelementar",
+      "Fey": "Feenwesen",
+      "Fiend": "Scheusal",
+      "Giant": "Riese",
+      "Humanoid": "Humanoider",
+      "Monstrosity": "Monstrosität",
+      "Ooze": "Schlick",
+      "Plant": "Pflanze",
+      "Outsider": "Außenseiter",
+      "Undead": "Untoter"
+    },
+    "FIELDS": {
+      "abilities": {
+        "hint": "Lege die anfänglichen Attributswerte für Kreaturen mit dieser Taxonomie fest. Verteile 12 Punkte auf alle Attribute. Jeder Attributswert muss zwischen 0 und 6 liegen. Attributswerte, die auf 0 gesetzt werden, können für Widersacher dieser Taxonomie nie einen Wert ungleich 0 erhalten.",
+        "label": "Basisattribute"
+      },
+      "category": {
+        "hint": "Die Kreaturenkategorie, zu der diese Taxonomie gehört.",
+        "label": "Kategorie"
+      },
+      "characteristics": {
+        "equipment.label": "Kann Ausrüstung verwenden",
+        "label": "Taxonomie-Merkmale",
+        "spells.label": "Kann Zauber wirken"
+      },
+      "identifier": {
+        "hint": "Eine Zeichenkennung, mit der diese Taxonomie in Tags, Aktionen oder anderen UI-Elementen eindeutig referenziert wird. Diese Kennung muss alphanumerisch sein und darf keine Leerzeichen oder Sonderzeichen enthalten.",
+        "label": "Kennung"
+      },
+      "movement": {
+        "label": "Bewegung",
+        "size": {
+          "hint": "Die Größe dieses Widersachers in Rasterfeldern.",
+          "label": "Größe"
+        },
+        "stride": {
+          "label": "Bewegungsrate",
+          "tooltip": "Bewegungsdistanz pro ausgegebenem Aktionspunkt."
+        }
+      },
+      "resistances": {
+        "hint": "Lege fest, wie Resistenzen und Verwundbarkeiten von Kreaturen dieser Taxonomie mit steigender Stufe skalieren. Weise jeder Resistenz Werte zwischen -3 (am verwundbarsten) und +3 (am resistentesten) zu. Schadenstypen mit Wert 0 sind weder resistent noch verwundbar. Immunität gegen einen Schadenstyp entspricht einer Resistenz von \"+4\". Die Summe aller Resistenzen und Immunitäten muss null ergeben.",
+        "immune": {
+          "hint": "Gib an, ob eine Kreatur dieser Taxonomie gegen diesen Schadenstyp immun ist.",
+          "label": "Schadensimmunität"
+        },
+        "label": "Resistenzskalierung",
+        "value": {
+          "hint": "Numerische Resistenz gegen diesen Schadenstyp, Wert zwischen -3 (am verwundbarsten) und 3 (am resistentesten). Skaliert, wenn eine Kreatur dieser Taxonomie Stufen aufsteigt.",
+          "label": "Resistenzskalierungswert"
+        }
+      }
+    },
+    "SHEET": {
+      "Choose": "Taxonomie wählen",
+      "Clear": "Taxonomie entfernen",
+      "Physiology": "Physiologie",
+      "Stature": "Taxonomie-Statur"
+    },
+    "WARNINGS": {
+      "InvalidAbilities": "Die Summe der anfänglichen Attributswerte muss 12 ergeben. Aktuell: {sum}",
+      "InvalidResistances": "Die Summe der Resistenzskalierungswerte muss null ergeben. Aktuell: {sum}"
+    }
+  },
+  "TOKEN": {
+    "LABELS": {
+      "Enemies": "{enemies} Feinde",
+      "Engagement": "Bindung {engagement}",
+      "Flanked": "Flankiert {flanked}"
+    },
+    "MOVEMENT": {
+      "ACTIONS": {
+        "climb": {
+          "description": "Klettere eine Oberfläche hinauf oder hinab, bis zu einer Distanz oder Höhe von der Hälfte deiner Bewegungsrate pro Aktion. Kreaturen mit eigener Kletterbewegung verwenden stattdessen diese Geschwindigkeit.",
+          "label": "Klettern"
+        },
+        "crawl": {
+          "description": "Bewege dich liegend bis zu einer Distanz von der Hälfte deiner Bewegungsrate pro Aktion.",
+          "label": "Kriechen"
+        },
+        "fast": {
+          "label": "Eilig"
+        },
+        "fly": {
+          "description": "Bewege dich durch die Luft bis zu einer Distanz deiner Flugbewegung pro Aktion. Nur Kreaturen mit Flugbewegung können diese Bewegungsart verwenden.",
+          "label": "Fliegen"
+        },
+        "jump": {
+          "description": "Springe, um eine Distanz bis zur Hälfte deiner Bewegungsrate pro Aktion zu überwinden.",
+          "label": "Springen"
+        },
+        "normal": {
+          "label": "Normal"
+        },
+        "slow": {
+          "label": "Vorsichtig"
+        },
+        "step": {
+          "description": "Bewege dich vorsichtig bis zu einer Distanz von der Hälfte deiner Bewegungsrate pro Aktion. Diese Bewegung provoziert kein Lösen aus dem Nahkampf.",
+          "label": "Schritt"
+        },
+        "swim": {
+          "description": "Bewege dich durch hüfttiefes oder tieferes Wasser bis zu einer Distanz von der Hälfte deiner Bewegungsrate pro Aktion. Kreaturen mit eigener Schwimmbewegung verwenden stattdessen diese Geschwindigkeit.",
+          "label": "Schwimmen"
+        },
+        "walk": {
+          "description": "Bewege dich bis zu einer Distanz deiner Bewegungsrate pro Aktion.",
+          "label": "Gehen"
+        }
+      }
+    }
+  },
+  "TOOL": {
+    "CATEGORIES": {
+      "Crafting": "Handwerksset",
+      "Implement": "Implement"
+    },
+    "FIELDS": {
+      "skills": {
+        "hint": "Bestimme Fertigkeiten oder Handwerkskunst, bei denen dieses bestimmte Werkzeug verwendet wird.",
+        "label": "Zugehörige Fertigkeiten"
+      }
+    }
+  },
+  "TRAVEL_PACES": {
+    "Fast": "Eilig",
+    "Hidden": "Versteckt",
+    "Normal": "Normal",
+    "Reckless": "Rücksichtslos",
+    "Slow": "Vorsichtig"
+  },
+  "TYPES": {
+    "ActiveEffect": {
+      "affix": "Affix",
+      "flanked": "Flankiert"
+    },
+    "Actor": {
+      "adversary": "Widersacher",
+      "group": "Gruppe",
+      "hero": "Held"
+    },
+    "Item": {
+      "accessory": "Accessoire",
+      "ancestry": "Abstammung",
+      "archetype": "Archetyp",
+      "armor": "Rüstung",
+      "background": "Hintergrund",
+      "consumable": "Verbrauchsgegenstand",
+      "loot": "Beute",
+      "schematic": "Herstellungsschema",
+      "spell": "Ikonischer Zauber",
+      "talent": "Talent",
+      "taxonomy": "Taxonomie",
+      "tool": "Werkzeug",
+      "weapon": "Waffe"
+    },
+    "JournalEntryPage": {
+      "skill": "Crucible-Fertigkeit"
+    }
+  },
+  "WALKTHROUGH": {
+    "AbilityPoints": "Gib verfügbare Attributspunkte aus, indem du deine Attributswerte erhöhst.",
+    "AddAncestry": "Wähle eine Abstammung aus dem Kompendium oder der Gegenstandsseitenleiste und füge sie per Drag-and-drop hinzu.",
+    "AddBackground": "Wähle einen Hintergrund aus dem Kompendium oder der Gegenstandsseitenleiste und füge ihn per Drag-and-drop hinzu.",
+    "ConfigureArchetype": "Konfiguriere einen Archetyp für diesen Widersacher.",
+    "ConfigureTaxonomy": "Konfiguriere eine Taxonomie für diesen Widersacher.",
+    "LevelOne": "Setze deinen Charakter auf Stufe 1 und beginne dein Abenteuer!",
+    "LevelUp": "Du hast genug Fortschritt gemacht, um eine neue Stufe zu erreichen. Erhöhe deine Stufe um eins, wenn du bereit bist!",
+    "LevelZero": "Schließe alle Schritte der Charaktererstellung ab, bevor du deinen Charakter auf Stufe 1 bringst.",
+    "LevelZeroIncomplete": "Du kannst nicht auf Stufe 1 aufsteigen, bevor du alle Schritte der Charaktererstellung abgeschlossen hast!",
+    "NextLevel": "Fortschritt zur nächsten Stufe",
+    "SkillPoints": "Gib verfügbare Fertigkeitspunkte aus, indem du deine Fertigkeitsränge erhöhst.",
+    "TalentPoints": "Gib verfügbare Talentpunkte aus, indem du den Talentbaum öffnest."
+  },
+  "WARNING": {
+    "AbilityCannotDecrease": "Du kannst dieses Attribut nicht weiter senken.",
+    "AbilityCannotIncrease": "Du kannst dieses Attribut nicht weiter erhöhen.",
+    "AbilityRequireAncestry": "Du musst eine Abstammung zuweisen, bevor du Attributserhöhungen kaufen kannst.",
+    "CannotEquipActionCost": "Du kannst keine Waffen ausrüsten, weil du keine Aktionspunkte verfügbar hast.",
+    "CannotEquipInCombat": "Figur {actor} kann {item} während einer Kampfbegegnung nicht ausrüsten oder ablegen.",
+    "CannotEquipInvalidCategory": "Figur {actor} kann {item} nicht im Ausrüstungsplatz {type} verwenden.",
+    "CannotEquipSlotInUse": "Figur {actor} kann {item} nicht ausrüsten, weil der Gegenstandsplatz {type} bereits belegt ist.",
+    "CannotEquipTaxonomy": "Figur {actor} kann {item} nicht ausrüsten, weil die Taxonomie \"{taxonomy}\" keine Ausrüstung verwenden kann.",
+    "NoParty": "Dafür muss eine primäre Gruppe konfiguriert sein.",
+    "SkillRequireAncestryBackground": "Du musst sowohl Abstammung als auch Hintergrund zuweisen, bevor du Fertigkeitsränge erwerben kannst."
+  },
+  "WEAPON": {
+    "CATEGORIES": {
+      "Balanced": "Ausgewogen",
+      "CategoryHands": "{category} ({hands}h)",
+      "Heavy": "Schwer",
+      "Light": "Leicht",
+      "Mechanical": "Mechanisch",
+      "Projectile": "Projektil",
+      "Shield": "Schild",
+      "ShieldHeavy": "Schwerer Schild",
+      "ShieldLight": "Leichter Schild",
+      "Simple": "Einfach",
+      "Talisman": "Talisman",
+      "Unarmed": "Unbewaffnet"
+    },
+    "FIELDS": {
+      "damageType": {
+        "hint": "Konfiguriere den Schadenstyp, den diese Waffe verursacht.",
+        "label": "Schadenstyp"
+      },
+      "dropped": {
+        "hint": "Wurde diese Waffe geworfen, entwaffnet oder anderweitig fallen gelassen?",
+        "label": "Fallen gelassen"
+      },
+      "loaded": {
+        "hint": "Wenn diese Waffe geladen werden muss, erfasse, ob sie derzeit geladen ist.",
+        "label": "Geladen"
+      },
+      "slot": {
+        "hint": "Gib an, in welchem Ausrüstungsplatz diese Waffe ausgerüstet ist.",
+        "label": "Ausrüstungsplatz"
+      }
+    },
+    "SHEET": {
+      "Equipment": "Waffendetails",
+      "Type": "Waffentyp"
+    },
+    "SLOTS": {
+      "Either": "Beliebige Hand",
+      "Mainhand": "Haupthand",
+      "Offhand": "Nebenhand",
+      "Twohand": "Zweihändig"
+    },
+    "SPECIFIC": {
+      "Unarmed": "Unbewaffnet",
+      "VampireBite": "Vampirbiss"
+    },
+    "TAGS": {
+      "Ambush": "Hinterhalt",
+      "AmbushTooltip": "Diese Waffe eignet sich gut, um zuzuschlagen, bevor deine Gegner reagieren können. Wenn du ein Ziel angreifst, das in der Initiative nach dir kommt, erhältst du +1 Boon.",
+      "Blocking": "Blockend",
+      "BlockingTooltip": "Diese Waffe gewährt einen Bonus auf deine Blocken-Verteidigung.",
+      "DamageTooltip": "Eine Kurzschreibweise der offensiven Fähigkeiten dieser Waffe, dargestellt als Angriffsbonus / Schadensbonus / Schadensmultiplikator.",
+      "Engaging": "Bindend",
+      "EngagingTooltip": "Waffen dieser Kategorie ermöglichen dir, besser gegen mehrere Feinde zu kämpfen, und erhöhen dein Engagement um +1.",
+      "Intuitive": "Intuitiv",
+      "IntuitiveTooltip": "Diese Waffe ist intuitiv genug, um ungeübt verwendet zu werden. Der Fertigkeitsmalus bei ungeübter Verwendung beträgt nur -1 statt -4.",
+      "Keen": "Scharf",
+      "KeenTooltip": "Diese Waffe ist bei einem kritischen Treffer besonders tödlich. WICHTIGER HINWEIS - die Eigenschaft Scharf ist im Playtest noch nicht implementiert.",
+      "Natural": "Natürlich",
+      "NaturalTooltip": "Natürliche Waffen profitieren vom Training mit natürlichen Waffen statt vom Training ihrer eigentlichen Kategorie. Natürliche Waffen können nicht fallen gelassen werden.",
+      "Oversized": "Übergroß",
+      "OversizedTooltip": "Dieser Gegenstand ist übergroß oder anderweitig unhandlich zu führen und hindert dich daran, schnell zu handeln. Du hast +2 Banes auf Initiative, solange dieser Gegenstand ausgerüstet ist.",
+      "Parrying": "Parierend",
+      "ParryingTooltip": "Diese Waffe gewährt einen Bonus auf deine Parieren-Verteidigung.",
+      "Reach": "Reichweite",
+      "ReachTooltip": "Diese Waffe gewährt eine größere effektive Reichweite als normal. Du kannst einfache Angriffe mit doppelter normaler Reichweite ausführen.",
+      "Reliable": "Zuverlässig",
+      "ReliableTooltip": "Diese Waffe ist verlässlich und führt fast nie zu spektakulär schlechten Ergebnissen. Die Schwelle für kritische Fehlschläge der Waffe wird um 2 verringert, sodass fehlgeschlagene Angriffe seltener zu einem kritischen Fehlschlag werden.",
+      "Reload": "Nachladen",
+      "ReloadTooltip": "Diese Waffe muss nachgeladen werden, um anzugreifen. Wenn die Waffe nicht geladen ist, kosten alle Aktionen, die sie verwenden, +1 Aktionspunkt.",
+      "Returning": "Zurückkehrend",
+      "ReturningTooltip": "Diese Waffe ist magisch oder mechanisch so konstruiert, dass sie nach dem Werfen in deine Hand zurückkehrt. Die Aktion Waffe werfen mit dieser Waffe lässt sie nicht fallen.",
+      "Thrown": "Wurf",
+      "ThrownTooltip": "Diese Waffe ist zum Werfen geeignet und erleidet nicht den Banes-Malus, der normalerweise bei der Aktion Waffe werfen angewendet wird.",
+      "Versatile": "Vielseitig",
+      "VersatileTooltip": "Diese Waffe kann ein- oder zweihändig geführt werden, und du kannst ohne Aktionspunktkosten zwischen diesen Modi wechseln. Wenn sie zweihändig geführt wird, erhält die Waffe +2 Basisschaden, verursacht aber 1 zusätzliche Aktionskosten für Angriffe."
+    }
+  }
+}
