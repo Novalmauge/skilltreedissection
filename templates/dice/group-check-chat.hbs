@@ -1,0 +1,35 @@
+<section class="crucible group-check-result themed theme-dark">
+    {{#if aggregate}}
+    <div class="crucible dice-roll standard-check group-check-aggregate line-item {{aggregate.classes}}">
+        <div class="dice-result">
+            <h4 class="dice-total check-result">
+                <span class="outcome">{{localize aggregate.outcomeKey}}</span>
+                <span class="result hex">{{aggregate.score}}</span>
+                <span class="target">{{aggregate.detail}}</span>
+            </h4>
+        </div>
+    </div>
+    {{/if}}
+    <div class="group-check-actors flexcol">
+        {{#each actors as |entry|}}
+        <div
+            class="group-check-row line-item {{#if entry.showRollResult}}{{entry.rollContext.cssClass}}{{/if}} {{entry.status}}"
+            {{#if entry.showRollResult}}data-action="expandRoll"{{/if}}
+            data-actor-id="{{entry.actorId}}"
+        >
+            <img class="icon" src="{{entry.actorImg}}" alt="{{entry.actorName}}">
+            <div class="title">
+                <h4 class="ellipsis" data-tooltip="{{entry.actorName}}">{{entry.actorName}}</h4>
+            </div>
+            <div class="controls">
+                {{#if entry.statusDisplay}}
+                <i class="{{entry.statusDisplay.classes}}"{{#if entry.statusDisplay.tooltip}} data-tooltip="{{entry.statusDisplay.tooltip}}"{{/if}}></i>
+                {{/if}}
+            </div>
+            {{#if entry.showRollResult}}
+            {{> "systems/crucible/templates/dice/partials/standard-check-dice-result.hbs" entry.rollContext}}
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+</section>
